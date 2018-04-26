@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from 'fs';
 import gulp from 'gulp';
 import {merge} from 'event-stream'
 import browserify from 'browserify';
@@ -119,8 +119,8 @@ function mergeAll(dest) {
   return merge(
     pipe('./src/icons/**/*', `./build/${dest}/icons`),
     pipe(['./src/_locales/**/*'], `./build/${dest}/_locales`),
-    pipe([`./src/images/${target}/**/*`], `./build/${dest}/images`),
-    pipe(['./src/images/shared/**/*'], `./build/${dest}/images`),
+    pipe([`./src/assets/**/*`], `./build/${dest}/assets`),
+    pipe(['./src/assets/shared/**/*'], `./build/${dest}/assets`),
     pipe(['./src/**/*.html'], `./build/${dest}`)
   )
 }
@@ -129,8 +129,6 @@ function buildJS(target) {
   const files = [
     'background.js',
     'contentscript.js',
-    'options.js',
-    'popup.js',
     'livereload.js'
   ]
 

@@ -1,0 +1,520 @@
+/*
+App reset by Ben Frain @benfrain / benfrain.com
+Slightly modified by Bharani @bharani91 / github.com/bharani91
+*/
+/*Hat tip to @thierrykoblentz for this approach: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+  box-sizing: border-box;
+}
+
+* {
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: inherit;
+}
+
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+input[type],
+[contenteditable] {
+  user-select: text;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*IMPORTANT: This removes the focus outline for most browsers. Be aware this is a backwards accessibilty step! Mozilla (i.e. Firefox) also adds a dotted outline around a tags and buttons when they receive tab focus which I haven't found an unhacky way of removing.*/
+a:focus,
+button:focus {
+  outline: 0;
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+input,
+fieldset {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+/*This switches the default outline off when an input receives focus (really important for users tabbing through with a keyboard) so ensure you put something decent in for your input focus instead!!*/
+input:focus {
+  outline: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/*Removes the default focusring that Mozilla places on select items. From: http://stackoverflow.com/a/18853002/1147859 
+Ensure you set `#000` to the colour you want your text to appear */
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+html, body {
+  box-sizing: border-box;
+}
+
+html:before, html:after, body:before, body:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+  color: #111111;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.75em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 1.10em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: .85em;
+}
+
+nav {
+  margin: 1em 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 1em;
+  margin-bottom: .25em;
+}
+
+a {
+  text-decoration: none;
+  color: #4990E2;
+}
+
+a:hover, a:focus {
+  color: #2e7fde;
+}
+
+ul, ol {
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 2.5em;
+}
+
+p {
+  margin: 1em 0;
+  hyphens: auto;
+}
+
+p.lead {
+  font-size: 1.2em;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+p + ul, p + ol {
+  margin-top: -.75em;
+}
+
+dd {
+  margin-bottom: 1em;
+  margin-left: 0;
+  padding-left: 2.5em;
+}
+
+dt {
+  font-weight: 700;
+}
+
+blockquote {
+  margin: 0;
+  padding-left: 2.5em;
+}
+
+#app {
+  display: flex;
+  font-family: "Lato", sans-serif;
+  top: 10px;
+  right: 30px;
+  justify-content: center;
+  align-items: center;
+  transition: .7s;
+}
+
+#app .popup-body {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 35px 26px 16px;
+  box-shadow: 13px 10px 63px -5px rgba(0, 0, 0, 0.75);
+  transition: .7s;
+}
+
+#app .influencer-info {
+  text-align: center;
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 23px;
+}
+
+#app .influencer-info .avatar {
+  width: 100px;
+  height: 100px;
+  background-size: 100%;
+  border-radius: 50%;
+  border: 10px solid #f2f3f3;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+#app .influencer-info .name {
+  font-weight: 700;
+  font-size: 21px;
+  color: #4a4a4a;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+#app .influencer-info .profession {
+  font-size: 13px;
+  color: #999;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+#app .influencer-info .profession::before {
+  content: ' - ';
+}
+
+#app .influencer-info .profession::after {
+  content: ' - ';
+}
+
+#app .influencer-info .rating {
+  margin: 0 auto;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+#app .influencer-info .rating .stars {
+  margin: 0 auto;
+  position: relative;
+  width: 100px;
+}
+
+#app .influencer-info .rating .stars-grey {
+  background-image: url(../assets/icons/stars-grey.svg);
+  width: 100px;
+  height: 15px;
+}
+
+#app .influencer-info .rating .stars-gold-cont {
+  position: absolute;
+  top: 0;
+  overflow-x: hidden;
+}
+
+#app .influencer-info .rating .stars-gold {
+  background-image: url(../assets/icons/stars-gold.svg);
+  width: 100px;
+  height: 15px;
+}
+
+#app .influencer-info .rating.rating-0 .stars-gold-cont {
+  width: 0;
+}
+
+#app .influencer-info .rating.rating-5 .stars-gold-cont {
+  width: 8px;
+}
+
+#app .influencer-info .rating.rating-10 .stars-gold-cont {
+  width: 20px;
+}
+
+#app .influencer-info .rating.rating-15 .stars-gold-cont {
+  width: 29px;
+}
+
+#app .influencer-info .rating.rating-20 .stars-gold-cont {
+  width: 40px;
+}
+
+#app .influencer-info .rating.rating-25 .stars-gold-cont {
+  width: 50px;
+}
+
+#app .influencer-info .rating.rating-30 .stars-gold-cont {
+  width: 60px;
+}
+
+#app .influencer-info .rating.rating-35 .stars-gold-cont {
+  width: 71px;
+}
+
+#app .influencer-info .rating.rating-40 .stars-gold-cont {
+  width: 80px;
+}
+
+#app .influencer-info .rating.rating-45 .stars-gold-cont {
+  width: 92px;
+}
+
+#app .influencer-info .rating.rating-50 .stars-gold-cont {
+  width: 100px;
+}
+
+#app .influencer-info .rating::before {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 1px;
+  top: 8px;
+  background-color: #dfdfdf;
+  left: 0;
+}
+
+#app .influencer-info .rating::after {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 1px;
+  top: 8px;
+  background-color: #dfdfdf;
+  right: 0;
+}
+
+#app .influencer-info .social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#app .influencer-info .social .social-item {
+  width: 33.33%;
+  text-align: left;
+  padding: 10px;
+}
+
+#app .influencer-info .social .social-item > a {
+  display: flex;
+  align-items: center;
+}
+
+#app .influencer-info .social .social-item:last-child {
+  padding-right: 0;
+}
+
+#app .influencer-info .social .social-item:last-child > a {
+  justify-content: flex-end;
+}
+
+#app .influencer-info .social .social-item:first-child {
+  padding-left: 0;
+}
+
+#app .influencer-info .social .social-item .logo {
+  position: relative;
+}
+
+#app .influencer-info .social .social-item .grey {
+  width: 25px;
+  height: 25px;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+#app .influencer-info .social .social-item .colored {
+  width: 25px;
+  height: 25px;
+  background-size: 100% auto;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: .5s;
+}
+
+#app .influencer-info .social .social-item.twitter .grey {
+  background-image: url(../assets/icons/twitter-grey.svg);
+}
+
+#app .influencer-info .social .social-item.twitter .colored {
+  background-image: url(../assets/icons/twitter.svg);
+}
+
+#app .influencer-info .social .social-item.facebook .grey {
+  background-image: url(../assets/icons/facebook-grey.svg);
+}
+
+#app .influencer-info .social .social-item.facebook .colored {
+  background-image: url(../assets/icons/facebook.svg);
+}
+
+#app .influencer-info .social .social-item.youtube .grey {
+  background-image: url(../assets/icons/youtube-grey.svg);
+}
+
+#app .influencer-info .social .social-item.youtube .colored {
+  background-image: url(../assets/icons/youtube.svg);
+}
+
+#app .influencer-info .social .social-item:not(:last-child) {
+  border-right: 1px solid #dfdfdf;
+}
+
+#app .influencer-info .social .social-item:hover .colored {
+  opacity: 1;
+  transition: .5;
+}
+
+#app .influencer-info .social a {
+  text-decoration: none;
+}
+
+#app .influencer-info .social p {
+  margin: 0;
+}
+
+#app .influencer-info .social .social-info {
+  padding-left: 8px;
+}
+
+#app .influencer-info .social .number {
+  font-size: 16px;
+  font-weight: 900;
+  color: #4a4a4a;
+  margin-bottom: 2px;
+}
+
+#app .influencer-info .social .number-of {
+  font-size: 10.5px;
+  color: #999;
+}
+
+#app .more-influencers {
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+#app .more-influencers > span {
+  display: block;
+  width: 85px;
+  font-size: 14px;
+  color: #8358c3;
+}
+
+#app .more-influencers .influencers {
+  display: flex;
+  padding-left: 10px;
+}
+
+#app .more-influencers .influencer {
+  transition: .5;
+}
+
+#app .more-influencers .influencer:hover {
+  transform: scale(1.1);
+  transition: .5;
+}
+
+#app .more-influencers .influencer:not(:first-child) {
+  margin-left: -6px;
+}
+
+#app .more-influencers .avatar {
+  width: 33px;
+  height: 33px;
+  border: 3px solid #e8e8e8;
+  border-radius: 50%;
+  background-size: 100%;
+}
+
+.influencer-x-btn {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 25px;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  outline: none;
+  opacity: .8;
+  box-shadow: 8px 12px 49px 7px rgba(0, 0, 0, 0.2);
+  background: #8358c3;
+  background: linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_fuchsia_blue_approx', endcolorstr='$color_cornflower_blue_approx', gradienttype=1 );
+  transition: .5;
+}
+
+.influencer-x-btn:hover {
+  opacity: 1;
+  transition: .5;
+}

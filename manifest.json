@@ -19,9 +19,6 @@
     "http://*/*",
     "https://*/*"
   ],
-  "options_ui": {
-    "page": "settings.html"
-  },
   "content_scripts": [
     {
       "matches": [
