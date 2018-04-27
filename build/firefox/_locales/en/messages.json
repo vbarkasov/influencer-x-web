@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Influencer X",
+    "description": "The name of the extension."
+  },
+  "appDescription": {
+    "message": "",
+    "description": "The description of the extension."
+  },
+  "btnTooltip": {
+    "message": "Influencer X",
+    "description": "Tooltip for the button."
+  }
+}

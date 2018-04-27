@@ -2,11 +2,13 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
   <link href="styles/styles.css" rel="stylesheet">
 </head>
 <body>
-  <div id="app">
+  <div id="app" class="influencer-x-popup hide-popup">
     <div class="popup-body">
+      <div class="close-btn"></div>
       <div class="influencer-info">
         <div class="avatar"></div>
         <p class="name"></p>
@@ -21,7 +23,9 @@
         </div>
         <div class="social"></div>
         <div class="last-course-btn">
-          <button class="influencer-x-btn">Last course</button>
+          <a href="" target="_blank">
+            <button class="influencer-x-btn">Last course</button>
+          </a>
         </div>
       </div>
       <div class="more-influencers">
@@ -46,5 +50,8 @@
       </div>
     </div>
   </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="scripts/scripts.js"></script>
 </body>
 </html>

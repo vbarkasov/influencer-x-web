@@ -129,7 +129,8 @@ function buildJS(target) {
   const files = [
     'background.js',
     'contentscript.js',
-    'livereload.js'
+    'livereload.js',
+    'scripts.js'
   ]
 
   let tasks = files.map( file => {
