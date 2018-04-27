@@ -26,6 +26,10 @@ $url_5: url(../assets/icons/facebook-grey.svg);
 $url_6: url(../assets/icons/facebook.svg);
 $url_7: url(../assets/icons/youtube-grey.svg);
 $url_8: url(../assets/icons/youtube.svg);
+$url_9: url(../assets/icons/instagram-grey.svg);
+$url_10: url(../assets/icons/instagram.svg);
+$url_11: url(../assets/icons/linkidin-grey.svg);
+$url_12: url(../assets/icons/linkidin.svg);
 
 #app {
 	.popup-body {
@@ -57,17 +61,15 @@ $url_8: url(../assets/icons/youtube.svg);
 			margin: 0;
 			margin-bottom: 5px;
 		}
-		.profession {
+		.website{
 			font-size: 13px;
 			color: $color_mountain_mist_approx;
 			margin: 0;
 			margin-bottom: 15px;
+			text-decoration: none;
 		}
-		.profession::before {
-			content: ' - ';
-		}
-		.profession::after {
-			content: ' - ';
+		.website:hover{
+			text-decoration: underline;
 		}
 		.rating {
 			margin: 0 auto;
@@ -207,6 +209,22 @@ $url_8: url(../assets/icons/youtube.svg);
 					}
 					.colored {
 						background-image: $url_8;
+					}
+				}
+				&.instagram {
+					.grey {
+						background-image: $url_9;
+					}
+					.colored {
+						background-image: $url_10;
+					}
+				}
+				&.linkidin {
+					.grey {
+						background-image: $url_11;
+					}
+					.colored {
+						background-image: $url_12;
 					}
 				}
 				&:not(:last-child) {

@@ -198,16 +198,6 @@ blockquote {
   padding-left: 2.5em;
 }
 
-#app {
-  display: flex;
-  font-family: "Lato", sans-serif;
-  top: 10px;
-  right: 30px;
-  justify-content: center;
-  align-items: center;
-  transition: .7s;
-}
-
 #app .popup-body {
   position: relative;
   box-sizing: border-box;
@@ -242,19 +232,16 @@ blockquote {
   margin-bottom: 5px;
 }
 
-#app .influencer-info .profession {
+#app .influencer-info .website {
   font-size: 13px;
   color: #999;
   margin: 0;
   margin-bottom: 15px;
+  text-decoration: none;
 }
 
-#app .influencer-info .profession::before {
-  content: ' - ';
-}
-
-#app .influencer-info .profession::after {
-  content: ' - ';
+#app .influencer-info .website:hover {
+  text-decoration: underline;
 }
 
 #app .influencer-info .rating {
@@ -424,6 +411,22 @@ blockquote {
 
 #app .influencer-info .social .social-item.youtube .colored {
   background-image: url(../assets/icons/youtube.svg);
+}
+
+#app .influencer-info .social .social-item.instagram .grey {
+  background-image: url(../assets/icons/instagram-grey.svg);
+}
+
+#app .influencer-info .social .social-item.instagram .colored {
+  background-image: url(../assets/icons/instagram.svg);
+}
+
+#app .influencer-info .social .social-item.linkidin .grey {
+  background-image: url(../assets/icons/linkidin-grey.svg);
+}
+
+#app .influencer-info .social .social-item.linkidin .colored {
+  background-image: url(../assets/icons/linkidin.svg);
 }
 
 #app .influencer-info .social .social-item:not(:last-child) {
