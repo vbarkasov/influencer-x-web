@@ -199,9 +199,6 @@ blockquote {
 }
 
 #app {
-  position: fixed;
-  top: 10px;
-  right: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -224,30 +221,7 @@ blockquote {
   font-family: "Lato", sans-serif;
 }
 
-#app .close-btn {
-  background-image: url(../assets/icons/close.svg);
-  opacity: .15;
-  width: 22px;
-  height: 22px;
-  background-size: 100%;
-  cursor: pointer;
-  position: absolute;
-  top: 13px;
-  right: 13px;
-  -webkit-transition: .5s;
-  -o-transition: .5s;
-  transition: .5s;
-}
-
-#app .close-btn:hover {
-  opacity: .4;
-  -webkit-transition: .5s;
-  -o-transition: .5s;
-  transition: .5s;
-}
-
 #app .popup-body {
-  opacity: 0;
   position: relative;
   box-sizing: border-box;
   background-color: #fff;

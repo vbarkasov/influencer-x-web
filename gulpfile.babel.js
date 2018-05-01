@@ -21,7 +21,6 @@ var manifest = {
   dev: {
     "background": {
       "scripts": [
-        "scripts/livereload.js",
         "scripts/background.js"
       ]
     }
@@ -121,6 +120,7 @@ function mergeAll(dest) {
     pipe(['./src/_locales/**/*'], `./build/${dest}/_locales`),
     pipe([`./src/assets/**/*`], `./build/${dest}/assets`),
     pipe(['./src/assets/shared/**/*'], `./build/${dest}/assets`),
+    pipe([`./src/scripts/jquery.min.js`], `./build/${dest}/scripts/`),
     pipe(['./src/**/*.html'], `./build/${dest}`)
   )
 }
@@ -128,8 +128,6 @@ function mergeAll(dest) {
 function buildJS(target) {
   const files = [
     'background.js',
-    'contentscript.js',
-    'livereload.js',
     'scripts.js'
   ]
 

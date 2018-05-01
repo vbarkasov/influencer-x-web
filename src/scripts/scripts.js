@@ -1,4 +1,4 @@
-
+$(document).ready(function() {
 	var domPopup = $('#app');
 	function closeInfluencerXPopup(){
 		domPopup.removeClass('active-popup');
@@ -84,4 +84,4 @@
 
 	//Point of entry
 	initInfluencerX();
-
+});
