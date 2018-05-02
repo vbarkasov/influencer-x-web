@@ -3,11 +3,11 @@
 
 
     function insertingDataIntoPopup(avatar, name, website, rating, social, course){
-        var domAva = jQuery('#app .influencer-info .avatar'),
-          domName = jQuery('#app .influencer-info .name'),
-          domSitelink = jQuery('#app .influencer-info .website'),
-          domRating = jQuery('#app .influencer-info .rating'),
-          domCourse = jQuery('#app .influencer-info .last-course-btn');
+        var domAva = jQuery('#influencer-app .influencer-info .avatar'),
+          domName = jQuery('#influencer-app .influencer-info .name'),
+          domSitelink = jQuery('#influencer-app .influencer-info .website'),
+          domRating = jQuery('#influencer-app .influencer-info .rating'),
+          domCourse = jQuery('#influencer-app .influencer-info .last-course-btn');
 
         var defaultPhoto = 'assets/images/default-ava.svg',
           defaultRating = '0';
@@ -32,7 +32,7 @@
     }
 
     function appendToHTMLSocialItem(arr){
-      var domSocial = jQuery('#app .influencer-info .social');
+      var domSocial = jQuery('#influencer-app .influencer-info .social');
       var template =  '<div class="social-item ' + arr.name + '">' +
                 '<a href="' + arr.link + '" target="_blank">' +
                   '<div class="logo">' +

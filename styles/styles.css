@@ -5,7 +5,7 @@ Slightly modified by Bharani @bharani91 / github.com/bharani91
 /*Hat tip to @thierrykoblentz for this approach: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 
 
-#app {
+#influencer-app {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,15 +20,15 @@ Slightly modified by Bharani @bharani91 / github.com/bharani91
   transition: .7s;
 }
 
-#app.hide-popup {
+#influencer-app.hide-popup {
   display: none;
 }
 
-#app * {
+#influencer-app * {
   font-family: "Lato", sans-serif;
 }
 
-#app .popup-body {
+#influencer-app .popup-body {
   position: relative;
   box-sizing: border-box;
   background-color: #fff;
@@ -39,20 +39,20 @@ Slightly modified by Bharani @bharani91 / github.com/bharani91
   transition: .7s;
 }
 
-#app.active-popup .popup-body {
+#influencer-app.active-popup .popup-body {
   opacity: 1;
   -webkit-transition: .7s;
   -o-transition: .7s;
   transition: .7s;
 }
 
-#app .influencer-info {
+#influencer-app .influencer-info {
   text-align: center;
   border-bottom: 1px solid #dfdfdf;
   padding-bottom: 23px;
 }
 
-#app .influencer-info .avatar {
+#influencer-app .influencer-info .avatar {
   width: 100px;
   height: 100px;
   background-size: 100%;
@@ -62,7 +62,7 @@ Slightly modified by Bharani @bharani91 / github.com/bharani91
   margin-bottom: 15px;
 }
 
-#app .influencer-info .name {
+#influencer-app .influencer-info .name {
   font-weight: 700;
   font-size: 21px;
   color: #4a4a4a;
@@ -70,7 +70,7 @@ Slightly modified by Bharani @bharani91 / github.com/bharani91
   margin-bottom: 5px;
 }
 
-#app .influencer-info .website {
+#influencer-app .influencer-info .website {
   font-size: 13px;
   color: #999;
   margin: 0;
@@ -78,86 +78,86 @@ Slightly modified by Bharani @bharani91 / github.com/bharani91
   text-decoration: none;
 }
 
-#app .influencer-info .website:hover {
+#influencer-app .influencer-info .website:hover {
   text-decoration: underline;
 }
 
-#app .influencer-info .rating {
+#influencer-app .influencer-info .rating {
   margin: 0 auto;
   margin-bottom: 25px;
   margin-top: 15px;
   position: relative;
 }
 
-#app .influencer-info .rating .stars {
+#influencer-app .influencer-info .rating .stars {
   margin: 0 auto;
   position: relative;
   width: 100px;
 }
 
-#app .influencer-info .rating .stars-grey {
+#influencer-app .influencer-info .rating .stars-grey {
   background-image: url(../assets/icons/stars-grey.svg);
   width: 100px;
   height: 15px;
 }
 
-#app .influencer-info .rating .stars-gold-cont {
+#influencer-app .influencer-info .rating .stars-gold-cont {
   position: absolute;
   top: 0;
   overflow-x: hidden;
 }
 
-#app .influencer-info .rating .stars-gold {
+#influencer-app .influencer-info .rating .stars-gold {
   background-image: url(../assets/icons/stars-gold.svg);
   width: 100px;
   height: 15px;
 }
 
-#app .influencer-info .rating.rating-0 .stars-gold-cont {
+#influencer-app .influencer-info .rating.rating-0 .stars-gold-cont {
   width: 0;
 }
 
-#app .influencer-info .rating.rating-5 .stars-gold-cont {
+#influencer-app .influencer-info .rating.rating-5 .stars-gold-cont {
   width: 8px;
 }
 
-#app .influencer-info .rating.rating-10 .stars-gold-cont {
+#influencer-app .influencer-info .rating.rating-10 .stars-gold-cont {
   width: 20px;
 }
 
-#app .influencer-info .rating.rating-15 .stars-gold-cont {
+#influencer-app .influencer-info .rating.rating-15 .stars-gold-cont {
   width: 29px;
 }
 
-#app .influencer-info .rating.rating-20 .stars-gold-cont {
+#influencer-app .influencer-info .rating.rating-20 .stars-gold-cont {
   width: 40px;
 }
 
-#app .influencer-info .rating.rating-25 .stars-gold-cont {
+#influencer-app .influencer-info .rating.rating-25 .stars-gold-cont {
   width: 50px;
 }
 
-#app .influencer-info .rating.rating-30 .stars-gold-cont {
+#influencer-app .influencer-info .rating.rating-30 .stars-gold-cont {
   width: 60px;
 }
 
-#app .influencer-info .rating.rating-35 .stars-gold-cont {
+#influencer-app .influencer-info .rating.rating-35 .stars-gold-cont {
   width: 71px;
 }
 
-#app .influencer-info .rating.rating-40 .stars-gold-cont {
+#influencer-app .influencer-info .rating.rating-40 .stars-gold-cont {
   width: 80px;
 }
 
-#app .influencer-info .rating.rating-45 .stars-gold-cont {
+#influencer-app .influencer-info .rating.rating-45 .stars-gold-cont {
   width: 92px;
 }
 
-#app .influencer-info .rating.rating-50 .stars-gold-cont {
+#influencer-app .influencer-info .rating.rating-50 .stars-gold-cont {
   width: 100px;
 }
 
-#app .influencer-info .rating::before {
+#influencer-app .influencer-info .rating::before {
   content: '';
   position: absolute;
   width: 70px;
@@ -167,7 +167,7 @@ Slightly modified by Bharani @bharani91 / github.com/bharani91
   left: 0;
 }
 
-#app .influencer-info .rating::after {
+#influencer-app .influencer-info .rating::after {
   content: '';
   position: absolute;
   width: 70px;
@@ -177,47 +177,47 @@ Slightly modified by Bharani @bharani91 / github.com/bharani91
   right: 0;
 }
 
-#app .influencer-info .social {
+#influencer-app .influencer-info .social {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
 
-#app .influencer-info .social .social-item {
+#influencer-app .influencer-info .social .social-item {
   width: 33.33%;
   text-align: left;
   padding: 10px;
 }
 
-#app .influencer-info .social .social-item > a {
+#influencer-app .influencer-info .social .social-item > a {
   display: flex;
   align-items: center;
 }
 
-#app .influencer-info .social .social-item:last-child {
+#influencer-app .influencer-info .social .social-item:last-child {
   padding-right: 0;
 }
 
-#app .influencer-info .social .social-item:last-child > a {
+#influencer-app .influencer-info .social .social-item:last-child > a {
   justify-content: flex-end;
 }
 
-#app .influencer-info .social .social-item:first-child {
+#influencer-app .influencer-info .social .social-item:first-child {
   padding-left: 0;
 }
 
-#app .influencer-info .social .social-item .logo {
+#influencer-app .influencer-info .social .social-item .logo {
   position: relative;
 }
 
-#app .influencer-info .social .social-item .grey {
+#influencer-app .influencer-info .social .social-item .grey {
   width: 25px;
   height: 25px;
   background-size: 100% auto;
   background-position: center;
 }
 
-#app .influencer-info .social .social-item .colored {
+#influencer-app .influencer-info .social .social-item .colored {
   width: 25px;
   height: 25px;
   background-size: 100% auto;
@@ -228,68 +228,68 @@ Slightly modified by Bharani @bharani91 / github.com/bharani91
   transition: .5s;
 }
 
-#app .influencer-info .social .social-item.twitter .grey {
+#influencer-app .influencer-info .social .social-item.twitter .grey {
   background-image: url(../assets/icons/twitter-grey.svg);
 }
 
-#app .influencer-info .social .social-item.twitter .colored {
+#influencer-app .influencer-info .social .social-item.twitter .colored {
   background-image: url(../assets/icons/twitter.svg);
 }
 
-#app .influencer-info .social .social-item.facebook .grey {
+#influencer-app .influencer-info .social .social-item.facebook .grey {
   background-image: url(../assets/icons/facebook-grey.svg);
 }
 
-#app .influencer-info .social .social-item.facebook .colored {
+#influencer-app .influencer-info .social .social-item.facebook .colored {
   background-image: url(../assets/icons/facebook.svg);
 }
 
-#app .influencer-info .social .social-item.youtube .grey {
+#influencer-app .influencer-info .social .social-item.youtube .grey {
   background-image: url(../assets/icons/youtube-grey.svg);
 }
 
-#app .influencer-info .social .social-item.youtube .colored {
+#influencer-app .influencer-info .social .social-item.youtube .colored {
   background-image: url(../assets/icons/youtube.svg);
 }
 
-#app .influencer-info .social .social-item.instagram .grey {
+#influencer-app .influencer-info .social .social-item.instagram .grey {
   background-image: url(../assets/icons/instagram-grey.svg);
 }
 
-#app .influencer-info .social .social-item.instagram .colored {
+#influencer-app .influencer-info .social .social-item.instagram .colored {
   background-image: url(../assets/icons/instagram.svg);
 }
 
-#app .influencer-info .social .social-item.linkedin .grey {
+#influencer-app .influencer-info .social .social-item.linkedin .grey {
   background-image: url(../assets/icons/linkedin-grey.svg);
 }
 
-#app .influencer-info .social .social-item.linkedin .colored {
+#influencer-app .influencer-info .social .social-item.linkedin .colored {
   background-image: url(../assets/icons/linkedin.svg);
 }
 
-#app .influencer-info .social .social-item:not(:last-child) {
+#influencer-app .influencer-info .social .social-item:not(:last-child) {
   border-right: 1px solid #dfdfdf;
 }
 
-#app .influencer-info .social .social-item:hover .colored {
+#influencer-app .influencer-info .social .social-item:hover .colored {
   opacity: 1;
   transition: .5;
 }
 
-#app .influencer-info .social a {
+#influencer-app .influencer-info .social a {
   text-decoration: none;
 }
 
-#app .influencer-info .social p {
+#influencer-app .influencer-info .social p {
   margin: 0;
 }
 
-#app .influencer-info .social .social-info {
+#influencer-app .influencer-info .social .social-info {
   padding-left: 8px;
 }
 
-#app .influencer-info .social .number {
+#influencer-app .influencer-info .social .number {
   font-size: 16px;
   font-weight: 900;
   line-height: 18px;
@@ -297,43 +297,43 @@ Slightly modified by Bharani @bharani91 / github.com/bharani91
   margin-bottom: 2px;
 }
 
-#app .influencer-info .social .number-of {
+#influencer-app .influencer-info .social .number-of {
   font-size: 10.5px;
   color: #999;
 }
 
-#app .more-influencers {
+#influencer-app .more-influencers {
   padding-top: 15px;
   display: flex;
   align-items: center;
 }
 
-#app .more-influencers > span {
+#influencer-app .more-influencers > span {
   display: block;
   width: 85px;
   font-size: 14px;
   color: #8358c3;
 }
 
-#app .more-influencers .influencers {
+#influencer-app .more-influencers .influencers {
   display: flex;
   padding-left: 10px;
 }
 
-#app .more-influencers .influencer {
+#influencer-app .more-influencers .influencer {
   transition: .5;
 }
 
-#app .more-influencers .influencer:hover {
+#influencer-app .more-influencers .influencer:hover {
   transform: scale(1.1);
   transition: .5;
 }
 
-#app .more-influencers .influencer:not(:first-child) {
+#influencer-app .more-influencers .influencer:not(:first-child) {
   margin-left: -6px;
 }
 
-#app .more-influencers .avatar {
+#influencer-app .more-influencers .avatar {
   width: 33px;
   height: 33px;
   border: 3px solid #e8e8e8;

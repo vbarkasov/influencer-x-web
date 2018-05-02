@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var domPopup = $('#app');
+	var domPopup = $('#influencer-app');
 	function closeInfluencerXPopup(){
 		domPopup.removeClass('active-popup');
 		setTimeout(function(){
@@ -12,7 +12,7 @@ $(document).ready(function() {
 			domPopup.addClass('active-popup');
 		}, 20);
 	}
-	$('#app .close-btn').click(function(){
+	$('#influencer-app .close-btn').click(function(){
 		closeInfluencerXPopup();
 	});
 
@@ -22,11 +22,11 @@ $(document).ready(function() {
 	}
 
 	function insertingDataIntoPopup(avatar, name, website, rating, social, course){
-		var domAva = $('#app .influencer-info .avatar'),
-			domName = $('#app .influencer-info .name'),
-			domSitelink = $('#app .influencer-info .website'),
-			domRating = $('#app .influencer-info .rating'),
-			domCourse = $('#app .influencer-info .last-course-btn');
+		var domAva = $('#influencer-app .influencer-info .avatar'),
+			domName = $('#influencer-app .influencer-info .name'),
+			domSitelink = $('#influencer-app .influencer-info .website'),
+			domRating = $('#influencer-app .influencer-info .rating'),
+			domCourse = $('#influencer-app .influencer-info .last-course-btn');
 
 		var defaultPhoto = 'assets/images/default-ava.svg',
 			defaultRating = '0';
@@ -51,7 +51,7 @@ $(document).ready(function() {
 	}
 
 	function appendToHTMLSocialItem(arr){
-		var domSocial = $('#app .influencer-info .social');
+		var domSocial = $('#influencer-app .influencer-info .social');
 		var template =  '<div class="social-item ' + arr.name + '">' +
 							'<a href="' + arr.link + '" target="_blank">' +
 								'<div class="logo">' +
