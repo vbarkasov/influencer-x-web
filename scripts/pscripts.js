@@ -34,7 +34,7 @@
     }
 
     function appendToHTMLSocialItem(arr, lnk){
-        var social_names = ["", "facebook", "instagram", "youtube", "linkedin"];
+        var social_names = ["", "facebook", "linkedin", "youtube", "instagram"];
         var sname = social_names[arr.social_id];
         var domSocial = jQuery('#influencer-app .influencer-info .social');
         var template =  '<div class="social-item ' + sname + '">' +
