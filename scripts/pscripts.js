@@ -40,7 +40,6 @@
         var template =  '<div class="social-item ' + sname + '">' +
                 '<a href="' + lnk + '" target="_blank">' +
                   '<div class="logo">' +
-                    '<div class="grey"></div>' +
                     '<div class="colored"></div>' +
                   '</div>' +
                   '<div class="social-info">' +
