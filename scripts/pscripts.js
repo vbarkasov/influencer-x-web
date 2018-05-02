@@ -9,11 +9,11 @@ function insertingDataIntoPopup(avatar, name, website, rating, social, soc2, cou
       domRating = jQuery('#influencer-app .influencer-info .influencer-rating'),
       domCourse = jQuery('#influencer-app .influencer-info .last-course-btn');
 
-    var defaultPhoto = 'assets/images/default-ava.svg',
+    var defaultPhoto = 'assets/images/default_avatar.svg',
       defaultRating = '0';
 
     if(avatar == '' || !avatar){
-      avatar = 'assets/icons/default-ava.svg';
+      avatar = 'assets/icons/default_avatar.svg';
     }
     if(rating == ''){
       rating = defaultRating;
