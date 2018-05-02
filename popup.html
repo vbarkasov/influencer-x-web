@@ -3,11 +3,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
   <style>
     .fiona-btn{
-      width: 100px;
-      height: 135px;
+      width: 140px;
+      height: 140px;
       background-repeat: no-repeat;
       -webkit-background-size: 100px auto;
       background-size: 100px auto;
+      background-position-x: center;
+      background-position-y: bottom;
+      background-color: #f2f3f3;
+      border-radius: 50%;
       cursor: pointer;
       position: fixed;
       right: 50px;
@@ -18,7 +22,7 @@
       -o-transition: .7s;
       transition: .7s;
       z-index: 99999999 !important;
-    }
+    }    
     .fiona-btn.active-fiona{
       opacity: 1;
       transform: scale(1);
@@ -26,6 +30,19 @@
       -o-transition: .7s;
       transition: .7s;
       z-index: 99999999 !important;
+    }
+    .fiona-btn .number{
+      background-color: #ea0b0b;
+      border-radius: 50%;
+      position: absolute;
+      width: 23px;
+      height: 23px;
+      text-align: center;
+      line-height: 23px;
+      color: #fff;
+      font-size: 11px;
+      right: 13px;
+      top: 8px;
     }
 
     #influencer-app {
@@ -420,7 +437,9 @@
     }
   </style>
 
-  <div id="fiona-btn" class="fiona-btn" style="background-image: url(https://welearn.school/extension/assets/icons/fiona/9.png);" onClick="openInfluencerXPopup();"></div>
+  <div id="fiona-btn" class="fiona-btn" style="background-image: url(https://welearn.school/extension/assets/icons/fiona/9.png);" onClick="openInfluencerXPopup();">
+    <div class="number">1</div>
+  </div>
 
   <div id="influencer-app" class="influencer-x-popup hide-popup">
     <div class="popup-body">
