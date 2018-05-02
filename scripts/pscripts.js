@@ -4,7 +4,7 @@
 
 
 
-    function insertingDataIntoPopup(avatar, name, website, rating, social, course){
+    function insertingDataIntoPopup(avatar, name, website, rating, social, soc2, course){
         var domAva = jQuery('#influencer-app .influencer-info .avatar'),
           domName = jQuery('#influencer-app .influencer-info .name'),
           domSitelink = jQuery('#influencer-app .influencer-info .website'),
@@ -29,16 +29,16 @@
         domCourse.children().attr('href', course[0].link);
 
         social.forEach(function(item, i, arr) {
-          appendToHTMLSocialItem(item);
+          appendToHTMLSocialItem(item, soc2[i].link);
         });
     }
 
-    function appendToHTMLSocialItem(arr){
-        var social_names = ["", "facebook", "youtube", "linkedin"];
+    function appendToHTMLSocialItem(arr, lnk){
+        var social_names = ["", "facebook", "instagram", "youtube", "linkedin"];
         var sname = social_names[arr.social_id];
         var domSocial = jQuery('#influencer-app .influencer-info .social');
         var template =  '<div class="social-item ' + sname + '">' +
-                '<a href="' + arr.link + '" target="_blank">' +
+                '<a href="' + lnk + '" target="_blank">' +
                   '<div class="logo">' +
                     '<div class="grey"></div>' +
                     '<div class="colored"></div>' +
@@ -56,7 +56,7 @@
 
 	    console.log(11124);
 	    //console.log(influencerData);
-	    insertingDataIntoPopup(influencerData.avatar, influencerData.name, influencerData.website, influencerData.rating, influencerData.entities, influencerData.course);
+	    insertingDataIntoPopup(influencerData.avatar, influencerData.name, influencerData.website, influencerData.rating, influencerData.entities, influencerData.socials, influencerData.course);
 
 	    var actualCode = '(' + function() {
 
