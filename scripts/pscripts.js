@@ -53,9 +53,6 @@
     }
     setTimeout(function() {
 
-
-	    console.log(11124);
-	    //console.log(influencerData);
 	    insertingDataIntoPopup(influencerData.avatar, influencerData.name, influencerData.website, influencerData.rating, influencerData.entities, influencerData.socials, influencerData.course);
 
 	    var actualCode = '(' + function() {

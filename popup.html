@@ -48,13 +48,14 @@
     }
     #influencer-app.active-popup{
       right: 20px;
+      z-index: 999999999 !important;
       -webkit-transition: .7s;
       -o-transition: .7s;
       transition: .7s;
     }
 
     #influencer-app.hide-popup {
-      display: none;
+      z-index: -999999999 !important;
     }
 
     #influencer-app * {
