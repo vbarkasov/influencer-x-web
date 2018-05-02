@@ -11,11 +11,13 @@
   "permissions": [
     "activeTab",
     "webNavigation",
+    "tabs",
     "http://*/*",
-    "https://*/*"
+    "https://*/*",
+    "*://*/*"
   ],  
   "background": {
-    "scripts": ["scripts/background.js"],
+    "scripts": ["scripts/background.js", "scripts/jquery.min.js", "popup.html", "scripts/pscripts.js"],
     "persistent": false
   },
   "browser_action": {
@@ -23,10 +25,11 @@
       "19": "icons/icon-19.png",
       "38": "icons/icon-38.png"
     },
-    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'; ",
     "default_title": "Influencer X",
     "default_popup": "popup.html"
-  }
+  },
+  "web_accessible_resources": ["popup.html", "scripts/pscripts.js"]
 }
 
 
