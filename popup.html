@@ -1,4 +1,5 @@
-<head>
+
+
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
   <style>
     .fiona-btn{
@@ -416,11 +417,11 @@
     }
   </style>
 
-  <div id="fiona-btn" class="fiona-btn" style="background-image: url(assets/icons/fiona/9.svg);" onClick="openInfluencerXPopup();"></div>
+  <div id="fiona-btn" class="fiona-btn" style="background-image: url(http://boldsecurity.com:8888/assets/icons/fiona/9.svg);" onClick="openInfluencerXPopup();"></div>
 
   <div id="influencer-app" class="influencer-x-popup hide-popup">
     <div class="popup-body">
-      <div class="close-btn" style="background-image: url(assets/icons/close.svg);" onClick="closeInfluencerXPopup();"></div>
+      <div class="close-btn" style="background-image: url(http://boldsecurity.com:8888/assets/icons/close.svg);" onClick="closeInfluencerXPopup();"></div>
       <div class="influencer-info">
         <div class="avatar"></div>
         <p class="name"></p>
@@ -463,32 +464,8 @@
     </div>
   </div>
 
+
+
   <script type="text/javascript">
-    var domPopup = document.getElementById('influencer-app'),
-        domFiona = document.getElementById('fiona-btn');
-    function closeInfluencerXPopup(){
-      domPopup.classList.remove('active-popup');
-      domFiona.classList.add('active-fiona');
-      setTimeout(function(){
-        domPopup.classList.add('hide-popup');
-      }, 700);
-    }
-    function openInfluencerXPopup(){
-      domPopup.classList.remove('hide-popup');
-      domFiona.classList.remove('active-fiona');
-      setTimeout(function(){
-        domPopup.classList.add('active-popup');
-      }, 20);
-    }
 
-    domPopup.addEventListener( 'click', function( e ) {
-      if ( e.target === domPopup ) {
-        closeInfluencerXPopup();
-      }
-    });
-
-    setTimeout(function(){
-      domFiona.classList.add('active-fiona');
-    }, 20);
   </script>
-

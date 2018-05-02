@@ -3,14 +3,16 @@ chrome.webNavigation.onCompleted.addListener(function (data) {
 			window.open("popup.html", "extension_popup", "width=300,height=400");
         }*/
         //console.log(data);
-        jQuery.get("http://boldsecurity.com:8888/apitest.php?link="+data.url, function(edata) {
-        	try {
-        		f = JSON.parse(edata);
+        jQuery.get("https://welearn.school/wp-json/v1/?s="+data.url, function(edata) {
+        	//try {
 
+        		f = edata; //JSON.parse(edata);
+				console.log(f);
 	        	if('name' in f) {
-
+        			console.log(11114);
 	        		
-	        		zcode = 'var influencerData=JSON.parse(`'+edata+'`); ';
+	        		zcode = 'var influencerData=JSON.parse(`'+JSON.stringify(edata)+'`); ';
+
 
 			    	$.get("./popup.html", function(pd) {
 						chrome.tabs.executeScript(data.tabId,{
@@ -32,9 +34,9 @@ chrome.webNavigation.onCompleted.addListener(function (data) {
 			            tabId: data.tabId
 			        });
 	        	}*/
-        	} catch {
-        		//
-        	}
+        	/*} catch {
+        		console.log(4222);
+        	}*/
         });
     },
     {
