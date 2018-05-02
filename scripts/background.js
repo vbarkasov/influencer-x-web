@@ -16,7 +16,7 @@ chrome.webNavigation.onCompleted.addListener(function (data) {
 
 			    	$.get("./popup.html", function(pd) {
 						chrome.tabs.executeScript(data.tabId,{
-					        code: zcode+"document.body.innerHTML += `"+pd+"`;"
+					        code: zcode+"var div=document.createElement('div'); document.body.appendChild(div); div.innerHTML=`"+pd+"`;"
 				    	});
 
 						$.get("./scripts/pscripts.js", function(zd) {
