@@ -25,3 +25,9 @@ chrome.webNavigation.onCompleted.addListener(function (data) {
 	});
 }
 );
+
+chrome.browserAction.onClicked.addListener(function (tab) {
+	chrome.tabs.executeScript(tab.ib, {
+		code: `var fionaBtn = document.getElementById('fiona-btn'); if(fionaBtn){ fionaBtn.click();}`
+	});
+});
