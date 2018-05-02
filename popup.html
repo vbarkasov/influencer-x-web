@@ -6,7 +6,6 @@
       width: 140px;
       height: 140px;
       background-repeat: no-repeat;
-      -webkit-background-size: 100px auto;
       background-size: 100px auto;
       background-position-x: center;
       background-position-y: bottom;
@@ -17,7 +16,9 @@
       right: 50px;
       top: 40px;
       opacity: 0;
-      transform: scale(.7);
+      -webkit-transform: scale(.7);
+          -ms-transform: scale(.7);
+              transform: scale(.7);
       -webkit-transition: .7s;
       -o-transition: .7s;
       transition: .7s;
@@ -25,7 +26,9 @@
     }    
     .fiona-btn.active-fiona{
       opacity: 1;
-      transform: scale(1);
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1);
       -webkit-transition: .7s;
       -o-transition: .7s;
       transition: .7s;
@@ -81,20 +84,28 @@
 
     #influencer-app .popup-body {
       position: relative;
-      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
       background-color: #fff;
       border-radius: 10px;
       width: 350px;
       padding: 35px 26px 16px;
-      box-shadow: 13px 10px 63px -5px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 13px 10px 63px -5px rgba(0, 0, 0, 0.75);
+              box-shadow: 13px 10px 63px -5px rgba(0, 0, 0, 0.75);
       opacity: 0;
-      transform: scale(.7);
+      -webkit-transform: scale(.7);
+          -ms-transform: scale(.7);
+              transform: scale(.7);
+      -webkit-transition: .7s;
+      -o-transition: .7s;
       transition: .7s;
     }
 
     #influencer-app.active-popup .popup-body {
       opacity: 1;
-      transform: scale(1);
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1);
       -webkit-transition: .7s;
       -o-transition: .7s;
       transition: .7s;
@@ -129,7 +140,8 @@
     #influencer-app .influencer-info .avatar {
       width: 120px;
       height: 120px;
-      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
       background-size: 100%;
       border-radius: 50%;
       border: 10px solid #f2f3f3;
@@ -252,9 +264,16 @@
     }
 
     #influencer-app .influencer-info .influencer-social {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: row;
-      justify-content: center;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
       margin-bottom: 20px;
     }
 
@@ -265,8 +284,12 @@
     }
 
     #influencer-app .influencer-info .influencer-social .influencer-social-item > a {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      align-items: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
     }
 
     #influencer-app .influencer-info .influencer-social .influencer-social-item:last-child {
@@ -274,7 +297,9 @@
     }
 
     #influencer-app .influencer-info .influencer-social .influencer-social-item:last-child > a {
-      justify-content: flex-end;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
     }
 
     #influencer-app .influencer-info .influencer-social .influencer-social-item:first-child {
@@ -313,6 +338,8 @@
 
     #influencer-app .influencer-info .influencer-social .influencer-social-item:hover .colored {
       opacity: 1;
+      -webkit-transition: .5;
+      -o-transition: .5;
       transition: .5;
     }
 
@@ -344,9 +371,16 @@
 
     #influencer-app .more-influencers {
       padding-top: 15px;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: row;
-      align-items: center;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
     }
 
     #influencer-app .more-influencers > span {
@@ -357,17 +391,28 @@
     }
 
     #influencer-app .more-influencers .influencers {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: row;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
       padding-left: 10px;
     }
 
     #influencer-app .more-influencers .influencer {
+      -webkit-transition: .5;
+      -o-transition: .5;
       transition: .5;
     }
 
     #influencer-app .more-influencers .influencer:hover {
-      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+              transform: scale(1.1);
+      -webkit-transition: .5;
+      -o-transition: .5;
       transition: .5;
     }
 
@@ -376,7 +421,8 @@
     }
 
     #influencer-app .more-influencers .avatar {
-      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
       width: 36px;
       height: 36px;
       border: 3px solid #e8e8e8;
@@ -393,15 +439,23 @@
       cursor: pointer;
       outline: none;
       opacity: .8;
-      box-shadow: 8px 12px 49px 7px rgba(0, 0, 0, 0.2);
+      -webkit-box-shadow: 8px 12px 49px 7px rgba(0, 0, 0, 0.2);
+              box-shadow: 8px 12px 49px 7px rgba(0, 0, 0, 0.2);
       background: #8358c3;
+      background: -webkit-linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
+      background: -o-linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
       background: linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
-      filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_fuchsia_blue_approx', endcolorstr='$color_cornflower_blue_approx', gradienttype=1 );
+      -webkit-filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_fuchsia_blue_approx', endcolorstr='$color_cornflower_blue_approx', gradienttype=1 );
+              filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_fuchsia_blue_approx', endcolorstr='$color_cornflower_blue_approx', gradienttype=1 );
+      -webkit-transition: .5;
+      -o-transition: .5;
       transition: .5;
     }
 
     .influencer-x-btn:hover {
       opacity: 1;
+      -webkit-transition: .5;
+      -o-transition: .5;
       transition: .5;
     }
   </style>
