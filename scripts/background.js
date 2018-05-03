@@ -1,4 +1,5 @@
 function listenerHandler(url, tabId) {
+	if(!url.includes("://")) return false;
 	jQuery.get("https://welearn.school/wp-json/v1/?s="+url, function(edata) {
 		f = edata;
 		console.log(f);
