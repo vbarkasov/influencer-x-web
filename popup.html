@@ -3,6 +3,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
   <style>
     .fiona-btn{
+      box-sizing: content-box;
       width: 140px;
       height: 140px;
       background-repeat: no-repeat;
@@ -22,6 +23,7 @@
       -webkit-transition: .7s;
       -o-transition: .7s;
       transition: .7s;
+      animation: purse-animation 3s linear infinite;
       z-index: 99999999 !important;
     }    
     .fiona-btn.active-fiona{
@@ -46,6 +48,20 @@
       font-size: 14px;
       right: 14px;
       top: 4px;
+    }
+    @keyframes purse-animation{
+      0%{
+        box-shadow: 0 0 0 0 rgba(234, 11, 11, .6), 0 0 0 0 rgba(234, 11, 11, .6);
+      }
+      40%{
+        box-shadow: 0 0 0 60px rgba(234, 11, 11, 0), 0 0 0 0 rgba(234, 11, 11, .6);
+      }
+      80%{
+        box-shadow: 0 0 0 60px rgba(234, 11, 11, 0), 0 0 0 0 rgba(234, 11, 11, 0);
+      }
+      100%{
+        box-shadow: 0 0 0 0 rgba(234, 11, 11, 0), 0 0 0 0 rgba(234, 11, 11, 0);
+      }
     }
 
     #influencer-app {
