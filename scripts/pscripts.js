@@ -50,46 +50,52 @@ function appendToHTMLSocialItem(arr, lnk){
 }
 setTimeout(function() {
 
-    insertingDataIntoPopup(influencerData.avatar, influencerData.name, influencerData.website, influencerData.rating, influencerData.entities, influencerData.socials, influencerData.course);
+	if(window.influencerInitiated !== true) {
 
-    var actualCode = '(' + function() {
 
-	    var domPopup = document.getElementById('influencer-app'),
-	        domFiona = document.getElementById('fiona-btn');
+	    insertingDataIntoPopup(influencerData.avatar, influencerData.name, influencerData.website, influencerData.rating, influencerData.entities, influencerData.socials, influencerData.course);
 
-	    domFiona.addEventListener('click', openInfluencerXPopup);
-	    
-	    function closeInfluencerXPopup(){
-	      domPopup.classList.remove('active-popup');
-	      domFiona.classList.add('active-fiona');
-	      setTimeout(function(){
-	        domPopup.classList.add('hide-popup');
-	      }, 700);
-	    }
-	    function openInfluencerXPopup(){
-	      domPopup.classList.remove('hide-popup');
-	      domFiona.classList.remove('active-fiona');
-	      setTimeout(function(){
-	        domPopup.classList.add('active-popup');
-	      }, 20);
-	    }
+	    window.influencerInitiated = true;
 
-	    window.openInfluencerXPopup = openInfluencerXPopup;
-	    window.closeInfluencerXPopup = closeInfluencerXPopup;
+	    var actualCode = '(' + function() {
 
-	    domPopup.addEventListener( 'click', function( e ) {
-	      if ( e.target === domPopup ) {
-	        closeInfluencerXPopup();
-	      }
-	    });
+		    var domPopup = document.getElementById('influencer-app'),
+		        domFiona = document.getElementById('fiona-btn');
 
-	    setTimeout(function(){
-	      domFiona.classList.add('active-fiona');
-	    }, 20);
+		    domFiona.addEventListener('click', openInfluencerXPopup);
+		    
+		    function closeInfluencerXPopup(){
+		      domPopup.classList.remove('active-popup');
+		      domFiona.classList.add('active-fiona');
+		      setTimeout(function(){
+		        domPopup.classList.add('hide-popup');
+		      }, 700);
+		    }
+		    function openInfluencerXPopup(){
+		      domPopup.classList.remove('hide-popup');
+		      domFiona.classList.remove('active-fiona');
+		      setTimeout(function(){
+		        domPopup.classList.add('active-popup');
+		      }, 20);
+		    }
 
-	} + ')();';
-	var script = document.createElement('script');
-	script.textContent = actualCode;
-	(document.head||document.documentElement).appendChild(script);
-	script.remove();
+		    window.openInfluencerXPopup = openInfluencerXPopup;
+		    window.closeInfluencerXPopup = closeInfluencerXPopup;
+
+		    domPopup.addEventListener( 'click', function( e ) {
+		      if ( e.target === domPopup ) {
+		        closeInfluencerXPopup();
+		      }
+		    });
+
+		    setTimeout(function(){
+		      domFiona.classList.add('active-fiona');
+		    }, 20);
+
+		} + ')();';
+		var script = document.createElement('script');
+		script.textContent = actualCode;
+		(document.head||document.documentElement).appendChild(script);
+		script.remove();
+	}
 }, 1000);

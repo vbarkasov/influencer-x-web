@@ -1,6 +1,5 @@
-chrome.webNavigation.onCompleted.addListener(function (data) {
-
-	jQuery.get("https://welearn.school/wp-json/v1/?s="+data.url, function(edata) {
+function listenerHandler(url, tabId) {
+	jQuery.get("https://welearn.school/wp-json/v1/?s="+url, function(edata) {
 		f = edata;
 		console.log(f);
 		if('name' in f) {
@@ -8,12 +7,12 @@ chrome.webNavigation.onCompleted.addListener(function (data) {
 			zcode = 'var influencerData=JSON.parse(`'+JSON.stringify(edata)+'`); ';
 
 			$.get("./popup.html", function(pd) {
-				chrome.tabs.executeScript(data.tabId,{
+				chrome.tabs.executeScript(tabId,{
 					code: zcode+"var div=document.createElement('div'); document.body.appendChild(div); div.innerHTML=`"+pd+"`;"
 				});
 
 				$.get("./scripts/pscripts.js", function(zd) {
-					chrome.tabs.executeScript(data.tabId,{
+					chrome.tabs.executeScript(tabId,{
 						code: zd
 					});
 					
@@ -21,9 +20,26 @@ chrome.webNavigation.onCompleted.addListener(function (data) {
 
 			});
 
+		} else {
+			chrome.tabs.executeScript(tabId, {
+
+				code: `document.getElementById('influencer-app').style.display = 'none';document.getElementById('fiona-btn').style.display = 'none';`
+
+			});
 		}
 	});
 }
+
+chrome.webNavigation.onCompleted.addListener(function (data) {
+
+	listenerHandler(data.url, data.tabId);
+}
+);
+
+chrome.tabs.onUpdated.addListener(
+  function(tabId, changeInfo, tab) {
+    listenerHandler(tab.url, tab.id);
+  }
 );
 
 chrome.browserAction.onClicked.addListener(function (tab) {
