@@ -24,7 +24,7 @@ function listenerHandler(url, tabId) {
 		} else {
 			chrome.tabs.executeScript(tabId, {
 
-				code: `document.getElementById('influencer-app').style.display = 'none';document.getElementById('fiona-btn').style.display = 'none';`
+				code: ``//`document.getElementById('influencer-app').style.display = 'none';document.getElementById('fiona-btn').style.display = 'none';`
 
 			});
 		}

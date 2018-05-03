@@ -63,10 +63,16 @@ setTimeout(function() {
 		    var domPopup = document.getElementById('influencer-app'),
 		        domFiona = document.getElementById('fiona-btn');
 
-		    domFiona.addEventListener('click', openInfluencerXPopup);
+		    //domFiona.addEventListener('click', window.openInfluencerXPopup);
+		    
+	    	$(document).on ("click", ".fiona-btn", function () {
+		    	window.openInfluencerXPopup();
+		    });
+	    
+		    console.log(domFiona);
 		    
 		    function closeInfluencerXPopup(){
-		      domPopup.classList.remove('active-popup');
+https://www.instagram.com/p/BgX4fA8FdH8/?taken-by=dorn_ivan		      domPopup.classList.remove('active-popup');
 		      domFiona.classList.add('active-fiona');
 		      setTimeout(function(){
 		        domPopup.classList.add('hide-popup');
