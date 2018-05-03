@@ -24,7 +24,6 @@
         -webkit-transition: .7s;
         -o-transition: .7s;
         transition: .7s;
-        animation: purse-animation 3s linear infinite;
         z-index: 99999999 !important;
       }
       .fiona-btn.active-fiona{
@@ -36,6 +35,15 @@
         -o-transition: .7s;
         transition: .7s;
         z-index: 99999999 !important;
+      }
+      .fiona-btn.scam-true{
+        animation: purse-animation 3s linear infinite;
+      }
+      .fiona-btn.scam-false{
+        -webkit-box-shadow: 0px 0px 38px 4px rgba(15,158,46,0.67);
+        -moz-box-shadow: 0px 0px 38px 4px rgba(15,158,46,0.67);
+        box-shadow: 0px 0px 38px 4px rgba(15,158,46,0.67);
+        border: 2px solid #61b371;
       }
       .fiona-btn .number{
         background-color: #ea0b0b;
@@ -478,7 +486,7 @@
       }
     </style>
 
-    <div id="fiona-btn" class="fiona-btn" style="background-image: url(https://welearn.school/extension/assets/icons/fiona/9.png);" >
+    <div id="fiona-btn" class="fiona-btn scam-false" style="background-image: url(https://welearn.school/extension/assets/icons/fiona/9.png);" >
       <div class="number">1</div>
     </div>
 
