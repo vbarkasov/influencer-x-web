@@ -1,527 +1,532 @@
-
-
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
-  <style>
-    .fiona-btn{
-      box-sizing: content-box;
-      width: 140px;
-      height: 140px;
-      background-repeat: no-repeat;
-      background-size: 100px auto;
-      background-position-x: center;
-      background-position-y: bottom;
-      background-color: #f2f3f3;
-      border-radius: 50%;
-      cursor: pointer;
-      position: fixed;
-      right: 50px;
-      top: 40px;
-      opacity: 0;
-      -webkit-transform: scale(.7);
-          -ms-transform: scale(.7);
-              transform: scale(.7);
-      -webkit-transition: .7s;
-      -o-transition: .7s;
-      transition: .7s;
-      animation: purse-animation 3s linear infinite;
-      z-index: 99999999 !important;
-    }    
-    .fiona-btn.active-fiona{
-      opacity: 1;
-      -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-              transform: scale(1);
-      -webkit-transition: .7s;
-      -o-transition: .7s;
-      transition: .7s;
-      z-index: 99999999 !important;
-    }
-    .fiona-btn .number{
-      background-color: #ea0b0b;
-      border-radius: 50%;
-      position: absolute;
-      width: 26px;
-      height: 26px;
-      text-align: center;
-      line-height: 26px;
-      color: #fff;
-      font-size: 14px;
-      right: 14px;
-      top: 4px;
-    }
-    @keyframes purse-animation{
-      0%{
-        box-shadow: 0 0 0 0 rgba(234, 11, 11, .6), 0 0 0 0 rgba(234, 11, 11, .6);
+<!DOCTYPE html>
+<html>
+  <body>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+    <style>
+      .fiona-btn{
+        box-sizing: content-box;
+        width: 140px;
+        height: 140px;
+        background-repeat: no-repeat;
+        background-size: 100px auto;
+        background-position-x: center;
+        background-position-y: bottom;
+        background-color: #f2f3f3;
+        border-radius: 50%;
+        cursor: pointer;
+        position: fixed;
+        right: 50px;
+        top: 40px;
+        opacity: 0;
+        -webkit-transform: scale(.7);
+            -ms-transform: scale(.7);
+                transform: scale(.7);
+        -webkit-transition: .7s;
+        -o-transition: .7s;
+        transition: .7s;
+        animation: purse-animation 3s linear infinite;
+        z-index: 99999999 !important;
       }
-      40%{
-        box-shadow: 0 0 0 60px rgba(234, 11, 11, 0), 0 0 0 0 rgba(234, 11, 11, .6);
+      .fiona-btn.active-fiona{
+        opacity: 1;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+        -webkit-transition: .7s;
+        -o-transition: .7s;
+        transition: .7s;
+        z-index: 99999999 !important;
       }
-      80%{
-        box-shadow: 0 0 0 60px rgba(234, 11, 11, 0), 0 0 0 0 rgba(234, 11, 11, 0);
+      .fiona-btn .number{
+        background-color: #ea0b0b;
+        border-radius: 50%;
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        text-align: center;
+        line-height: 26px;
+        color: #fff;
+        font-size: 14px;
+        right: 14px;
+        top: 4px;
       }
-      100%{
-        box-shadow: 0 0 0 0 rgba(234, 11, 11, 0), 0 0 0 0 rgba(234, 11, 11, 0);
+      @keyframes purse-animation{
+        0%{
+          box-shadow: 0 0 0 0 rgba(234, 11, 11, .6), 0 0 0 0 rgba(234, 11, 11, .6);
+        }
+        40%{
+          box-shadow: 0 0 0 60px rgba(234, 11, 11, 0), 0 0 0 0 rgba(234, 11, 11, .6);
+        }
+        80%{
+          box-shadow: 0 0 0 60px rgba(234, 11, 11, 0), 0 0 0 0 rgba(234, 11, 11, 0);
+        }
+        100%{
+          box-shadow: 0 0 0 0 rgba(234, 11, 11, 0), 0 0 0 0 rgba(234, 11, 11, 0);
+        }
       }
-    }
 
-    #influencer-app {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      z-index: 999999999 !important;
-      position: fixed;
-      top: 40px;
-      right: -100px;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-transition: .7s;
-      -o-transition: .7s;
-      transition: .7s;
-    }
-    #influencer-app.active-popup{
-      right: 20px;
-      z-index: 999999999 !important;
-      -webkit-transition: .7s;
-      -o-transition: .7s;
-      transition: .7s;
-    }
+      #influencer-app {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        z-index: 999999999 !important;
+        position: fixed;
+        top: 40px;
+        right: -100px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-transition: .7s;
+        -o-transition: .7s;
+        transition: .7s;
+      }
+      #influencer-app.active-popup{
+        right: 20px;
+        z-index: 999999999 !important;
+        -webkit-transition: .7s;
+        -o-transition: .7s;
+        transition: .7s;
+      }
 
-    #influencer-app.hide-popup {
-      z-index: -999999999 !important;
-      display: none;
-    }
+      #influencer-app.hide-popup {
+        z-index: -999999999 !important;
+        display: none;
+      }
 
-    #influencer-app * {
-      font-family: "Lato", sans-serif;
-    }
+      #influencer-app * {
+        font-family: "Lato", sans-serif;
+      }
 
-    #influencer-app .popup-body {
-      position: relative;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      background-color: #fff;
-      border-radius: 10px;
-      width: 350px;
-      padding: 35px 26px 16px;
-      -webkit-box-shadow: 13px 10px 63px -5px rgba(0, 0, 0, 0.75);
-              box-shadow: 13px 10px 63px -5px rgba(0, 0, 0, 0.75);
-      opacity: 0;
-      -webkit-transform: scale(.7);
-          -ms-transform: scale(.7);
-              transform: scale(.7);
-      -webkit-transition: .7s;
-      -o-transition: .7s;
-      transition: .7s;
-    }
+      #influencer-app .popup-body {
+        position: relative;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        background-color: #fff;
+        border-radius: 10px;
+        width: 350px;
+        padding: 35px 26px 16px;
+        -webkit-box-shadow: 13px 10px 63px -5px rgba(0, 0, 0, 0.75);
+                box-shadow: 13px 10px 63px -5px rgba(0, 0, 0, 0.75);
+        opacity: 0;
+        -webkit-transform: scale(.7);
+            -ms-transform: scale(.7);
+                transform: scale(.7);
+        -webkit-transition: .7s;
+        -o-transition: .7s;
+        transition: .7s;
+      }
 
-    #influencer-app.active-popup .popup-body {
-      opacity: 1;
-      -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-              transform: scale(1);
-      -webkit-transition: .7s;
-      -o-transition: .7s;
-      transition: .7s;
-    }
+      #influencer-app.active-popup .popup-body {
+        opacity: 1;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+        -webkit-transition: .7s;
+        -o-transition: .7s;
+        transition: .7s;
+      }
 
-    .influencer-x-popup .close-btn{
-      opacity: .15;
-      width: 22px;
-      height: 22px;
-      background-size: 100%;
-      cursor: pointer;
-      position: absolute;
-      top: 13px;
-      right: 13px;
-      -webkit-transition: .5s;
-      -o-transition: .5s;
-      transition: .5s;
-    }
-    .influencer-x-popup .close-btn:hover{
-      opacity: .4;
-      -webkit-transition: .5s;
-      -o-transition: .5s;
-      transition: .5s;
-    }
+      .influencer-x-popup .close-btn{
+        opacity: .15;
+        width: 22px;
+        height: 22px;
+        background-size: 100%;
+        cursor: pointer;
+        position: absolute;
+        top: 13px;
+        right: 13px;
+        -webkit-transition: .5s;
+        -o-transition: .5s;
+        transition: .5s;
+      }
+      .influencer-x-popup .close-btn:hover{
+        opacity: .4;
+        -webkit-transition: .5s;
+        -o-transition: .5s;
+        transition: .5s;
+      }
 
-    #influencer-app .influencer-info {
-      text-align: center;
-      border-bottom: 1px solid #dfdfdf;
-      padding-bottom: 23px;
-    }
+      #influencer-app .influencer-info {
+        text-align: center;
+        border-bottom: 1px solid #dfdfdf;
+        padding-bottom: 23px;
+      }
 
-    #influencer-app .influencer-info .avatar {
-      width: 120px;
-      height: 120px;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      background-size: 100%;
-      border-radius: 50%;
-      border: 10px solid #f2f3f3;
-      margin: 0 auto;
-      margin-bottom: 15px;
-    }
+      #influencer-app .influencer-info .avatar {
+        width: 120px;
+        height: 120px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        background-size: 100%;
+        border-radius: 50%;
+        border: 10px solid #f2f3f3;
+        margin: 0 auto;
+        margin-bottom: 15px;
+      }
 
-    #influencer-app .influencer-info .name {
-      font-weight: 700;
-      font-size: 21px;
-      color: #4a4a4a;
-      margin: 0;
-      margin-bottom: 5px;
-    }
+      #influencer-app .influencer-info .name {
+        font-weight: 700;
+        font-size: 21px;
+        color: #4a4a4a;
+        margin: 0;
+        margin-bottom: 5px;
+      }
 
-    #influencer-app .influencer-info .website {
-      font-size: 13px;
-      color: #999;
-      margin: 0;
-      text-decoration: none;
-    }
+      #influencer-app .influencer-info .website {
+        font-size: 13px;
+        color: #999;
+        margin: 0;
+        text-decoration: none;
+      }
 
-    #influencer-app .influencer-info .website:hover {
-      text-decoration: underline;
-    }
+      #influencer-app .influencer-info .website:hover {
+        text-decoration: underline;
+      }
 
-    #influencer-app .influencer-info .influencer-rating {
-      width: 100%;
-      margin-bottom: 25px;
-      margin-top: 15px;
-      position: relative;
-    }
+      #influencer-app .influencer-info .influencer-rating {
+        width: 100%;
+        margin-bottom: 25px;
+        margin-top: 15px;
+        position: relative;
+      }
 
-    #influencer-app .influencer-info .influencer-rating .stars {
-      margin: 0 auto;
-      position: relative;
-      width: 100px;
-    }
+      #influencer-app .influencer-info .influencer-rating .stars {
+        margin: 0 auto;
+        position: relative;
+        width: 100px;
+      }
 
-    #influencer-app .influencer-info .influencer-rating .stars-grey {
-      background-image: url(https://welearn.school/extension/assets/icons/stars-grey.svg);
-      width: 100px;
-      height: 15px;
-    }
+      #influencer-app .influencer-info .influencer-rating .stars-grey {
+        background-image: url(https://welearn.school/extension/assets/icons/stars-grey.svg);
+        width: 100px;
+        height: 15px;
+      }
 
-    #influencer-app .influencer-info .influencer-rating .stars-gold-cont {
-      position: absolute;
-      top: 0;
-      overflow-x: hidden;
-    }
+      #influencer-app .influencer-info .influencer-rating .stars-gold-cont {
+        position: absolute;
+        top: 0;
+        overflow-x: hidden;
+      }
 
-    #influencer-app .influencer-info .influencer-rating .stars-gold {
-      background-image: url(https://welearn.school/extension/assets/icons/stars-gold.svg);
-      width: 100px;
-      height: 15px;
-    }
+      #influencer-app .influencer-info .influencer-rating .stars-gold {
+        background-image: url(https://welearn.school/extension/assets/icons/stars-gold.svg);
+        width: 100px;
+        height: 15px;
+      }
 
-    #influencer-app .influencer-info .influencer-rating.rating-0 .stars-gold-cont {
-      width: 0;
-    }
+      #influencer-app .influencer-info .influencer-rating.rating-0 .stars-gold-cont {
+        width: 0;
+      }
 
-    #influencer-app .influencer-info .influencer-rating.rating-5 .stars-gold-cont {
-      width: 8px;
-    }
+      #influencer-app .influencer-info .influencer-rating.rating-5 .stars-gold-cont {
+        width: 8px;
+      }
 
-    #influencer-app .influencer-info .influencer-rating.rating-10 .stars-gold-cont {
-      width: 20px;
-    }
+      #influencer-app .influencer-info .influencer-rating.rating-10 .stars-gold-cont {
+        width: 20px;
+      }
 
-    #influencer-app .influencer-info .influencer-rating.rating-15 .stars-gold-cont {
-      width: 29px;
-    }
+      #influencer-app .influencer-info .influencer-rating.rating-15 .stars-gold-cont {
+        width: 29px;
+      }
 
-    #influencer-app .influencer-info .influencer-rating.rating-20 .stars-gold-cont {
-      width: 40px;
-    }
+      #influencer-app .influencer-info .influencer-rating.rating-20 .stars-gold-cont {
+        width: 40px;
+      }
 
-    #influencer-app .influencer-info .influencer-rating.rating-25 .stars-gold-cont {
-      width: 50px;
-    }
+      #influencer-app .influencer-info .influencer-rating.rating-25 .stars-gold-cont {
+        width: 50px;
+      }
 
-    #influencer-app .influencer-info .influencer-rating.rating-30 .stars-gold-cont {
-      width: 60px;
-    }
+      #influencer-app .influencer-info .influencer-rating.rating-30 .stars-gold-cont {
+        width: 60px;
+      }
 
-    #influencer-app .influencer-info .influencer-rating.rating-35 .stars-gold-cont {
-      width: 71px;
-    }
+      #influencer-app .influencer-info .influencer-rating.rating-35 .stars-gold-cont {
+        width: 71px;
+      }
 
-    #influencer-app .influencer-info .influencer-rating.rating-40 .stars-gold-cont {
-      width: 80px;
-    }
+      #influencer-app .influencer-info .influencer-rating.rating-40 .stars-gold-cont {
+        width: 80px;
+      }
 
-    #influencer-app .influencer-info .influencer-rating.rating-45 .stars-gold-cont {
-      width: 92px;
-    }
+      #influencer-app .influencer-info .influencer-rating.rating-45 .stars-gold-cont {
+        width: 92px;
+      }
 
-    #influencer-app .influencer-info .influencer-rating.rating-50 .stars-gold-cont {
-      width: 100px;
-    }
+      #influencer-app .influencer-info .influencer-rating.rating-50 .stars-gold-cont {
+        width: 100px;
+      }
 
-    #influencer-app .influencer-info .influencer-rating::before {
-      content: '';
-      position: absolute;
-      width: 70px;
-      height: 1px;
-      top: 8px;
-      background-color: #dfdfdf;
-      left: 0;
-    }
+      #influencer-app .influencer-info .influencer-rating::before {
+        content: '';
+        position: absolute;
+        width: 70px;
+        height: 1px;
+        top: 8px;
+        background-color: #dfdfdf;
+        left: 0;
+      }
 
-    #influencer-app .influencer-info .influencer-rating::after {
-      content: '';
-      position: absolute;
-      width: 70px;
-      height: 1px;
-      top: 8px;
-      background-color: #dfdfdf;
-      right: 0;
-    }
+      #influencer-app .influencer-info .influencer-rating::after {
+        content: '';
+        position: absolute;
+        width: 70px;
+        height: 1px;
+        top: 8px;
+        background-color: #dfdfdf;
+        right: 0;
+      }
 
-    #influencer-app .influencer-info .influencer-social {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      margin-bottom: 20px;
-    }
+      #influencer-app .influencer-info .influencer-social {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        margin-bottom: 20px;
+      }
 
-    #influencer-app .influencer-info .influencer-social .influencer-social-item {
-      width: 33.33%;
-      text-align: left;
-      padding: 10px;
-    }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item {
+        width: 33.33%;
+        text-align: left;
+        padding: 10px;
+      }
 
-    #influencer-app .influencer-info .influencer-social .influencer-social-item > a {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-    }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item > a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
 
-    #influencer-app .influencer-info .influencer-social .influencer-social-item:last-child {
-      padding-right: 0;
-    }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item:last-child {
+        padding-right: 0;
+      }
 
-    #influencer-app .influencer-info .influencer-social .influencer-social-item:last-child > a {
-      -webkit-box-pack: end;
-          -ms-flex-pack: end;
-              justify-content: flex-end;
-    }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item:last-child > a {
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+      }
 
-    #influencer-app .influencer-info .influencer-social .influencer-social-item:first-child {
-      padding-left: 0;
-    }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item:first-child {
+        padding-left: 0;
+      }
 
-    #influencer-app .influencer-info .influencer-social .influencer-social-item .logo {
-      position: relative;
-    }
-    #influencer-app .influencer-info .influencer-social .influencer-social-item .colored {
-      width: 25px;
-      height: 25px;
-      background-size: 100% auto;
-      background-position: center;
-      top: 0;
-    }
-    #influencer-app .influencer-info .influencer-social .influencer-social-item.twitter .colored {
-      background-image: url(https://welearn.school/extension/assets/icons/twitter.svg);
-    }
-    #influencer-app .influencer-info .influencer-social .influencer-social-item.facebook .colored {
-      background-image: url(https://welearn.school/extension/assets/icons/facebook.svg);
-    }
-    #influencer-app .influencer-info .influencer-social .influencer-social-item.youtube .colored {
-      background-image: url(https://welearn.school/extension/assets/icons/youtube.svg);
-    }
-    #influencer-app .influencer-info .influencer-social .influencer-social-item.instagram .colored {
-      background-image: url(https://welearn.school/extension/assets/icons/instagram.svg);
-    }
-    #influencer-app .influencer-info .influencer-social .influencer-social-item.linkedin .colored {
-      background-image: url(https://welearn.school/extension/assets/icons/linkedin.svg);
-    }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item .logo {
+        position: relative;
+      }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item .colored {
+        width: 25px;
+        height: 25px;
+        background-size: 100% auto;
+        background-position: center;
+        top: 0;
+      }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item.twitter .colored {
+        background-image: url(https://welearn.school/extension/assets/icons/twitter.svg);
+      }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item.facebook .colored {
+        background-image: url(https://welearn.school/extension/assets/icons/facebook.svg);
+      }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item.youtube .colored {
+        background-image: url(https://welearn.school/extension/assets/icons/youtube.svg);
+      }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item.instagram .colored {
+        background-image: url(https://welearn.school/extension/assets/icons/instagram.svg);
+      }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item.linkedin .colored {
+        background-image: url(https://welearn.school/extension/assets/icons/linkedin.svg);
+      }
 
-    #influencer-app .influencer-info .influencer-social .influencer-social-item:not(:last-child) {
-      border-right: 1px solid #dfdfdf;
-    }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item:not(:last-child) {
+        border-right: 1px solid #dfdfdf;
+      }
 
-    #influencer-app .influencer-info .influencer-social .influencer-social-item:hover .colored {
-      opacity: 1;
-      -webkit-transition: .5;
-      -o-transition: .5;
-      transition: .5;
-    }
+      #influencer-app .influencer-info .influencer-social .influencer-social-item:hover .colored {
+        opacity: 1;
+        -webkit-transition: .5;
+        -o-transition: .5;
+        transition: .5;
+      }
 
-    #influencer-app .influencer-info .influencer-social a {
-      text-decoration: none;
-    }
+      #influencer-app .influencer-info .influencer-social a {
+        text-decoration: none;
+      }
 
-    #influencer-app .influencer-info .influencer-social p {
-      margin: 0;
-    }
+      #influencer-app .influencer-info .influencer-social p {
+        margin: 0;
+      }
 
-    #influencer-app .influencer-info .influencer-social .influencer-social-info {
-      padding-left: 8px;
-    }
+      #influencer-app .influencer-info .influencer-social .influencer-social-info {
+        padding-left: 8px;
+      }
 
-    #influencer-app .influencer-info .influencer-social .number {
-      font-size: 16px;
-      font-weight: 900;
-      line-height: 18px;
-      color: #4a4a4a;
-      margin-bottom: 2px;
-    }
+      #influencer-app .influencer-info .influencer-social .number {
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 18px;
+        color: #4a4a4a;
+        margin-bottom: 2px;
+      }
 
-    #influencer-app .influencer-info .influencer-social .number-of {
-      font-size: 10.5px;
-      color: #999;
-      line-height: 15px;
-    }
+      #influencer-app .influencer-info .influencer-social .number-of {
+        font-size: 10.5px;
+        color: #999;
+        line-height: 15px;
+      }
 
-    #influencer-app .more-influencers {
-      padding-top: 15px;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-    }
+      #influencer-app .more-influencers {
+        padding-top: 15px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
 
-    #influencer-app .more-influencers > span {
-      display: block;
-      width: 85px;
-      font-size: 14px;
-      color: #8358c3;
-    }
+      #influencer-app .more-influencers > span {
+        display: block;
+        width: 85px;
+        font-size: 14px;
+        color: #8358c3;
+      }
 
-    #influencer-app .more-influencers .influencers {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row;
-      padding-left: 10px;
-    }
+      #influencer-app .more-influencers .influencers {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        padding-left: 10px;
+      }
 
-    #influencer-app .more-influencers .influencer {
-      -webkit-transition: .5;
-      -o-transition: .5;
-      transition: .5;
-    }
+      #influencer-app .more-influencers .influencer {
+        -webkit-transition: .5;
+        -o-transition: .5;
+        transition: .5;
+      }
 
-    #influencer-app .more-influencers .influencer:hover {
-      -webkit-transform: scale(1.1);
-          -ms-transform: scale(1.1);
-              transform: scale(1.1);
-      -webkit-transition: .5;
-      -o-transition: .5;
-      transition: .5;
-    }
+      #influencer-app .more-influencers .influencer:hover {
+        -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+                transform: scale(1.1);
+        -webkit-transition: .5;
+        -o-transition: .5;
+        transition: .5;
+      }
 
-    #influencer-app .more-influencers .influencer:not(:first-child) {
-      margin-left: -6px;
-    }
+      #influencer-app .more-influencers .influencer:not(:first-child) {
+        margin-left: -6px;
+      }
 
-    #influencer-app .more-influencers .avatar {
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      width: 36px;
-      height: 36px;
-      border: 3px solid #e8e8e8;
-      border-radius: 50%;
-      background-size: 100%;
-    }
+      #influencer-app .more-influencers .avatar {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        width: 36px;
+        height: 36px;
+        border: 3px solid #e8e8e8;
+        border-radius: 50%;
+        background-size: 100%;
+      }
 
-    .influencer-x-btn {
-      border: none;
-      border-radius: 20px;
-      padding: 10px 25px;
-      color: #fff;
-      font-size: 17px;
-      cursor: pointer;
-      outline: none;
-      opacity: .8;
-      -webkit-box-shadow: 8px 12px 49px 7px rgba(0, 0, 0, 0.2);
-              box-shadow: 8px 12px 49px 7px rgba(0, 0, 0, 0.2);
-      background: #8358c3;
-      background: -webkit-linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
-      background: -o-linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
-      background: linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
-      -webkit-filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_fuchsia_blue_approx', endcolorstr='$color_cornflower_blue_approx', gradienttype=1 );
-              filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_fuchsia_blue_approx', endcolorstr='$color_cornflower_blue_approx', gradienttype=1 );
-      -webkit-transition: .5;
-      -o-transition: .5;
-      transition: .5;
-    }
+      .influencer-x-btn {
+        border: none;
+        border-radius: 20px;
+        padding: 10px 25px;
+        color: #fff;
+        font-size: 17px;
+        cursor: pointer;
+        outline: none;
+        opacity: .8;
+        -webkit-box-shadow: 8px 12px 49px 7px rgba(0, 0, 0, 0.2);
+                box-shadow: 8px 12px 49px 7px rgba(0, 0, 0, 0.2);
+        background: #8358c3;
+        background: -webkit-linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
+        background: -o-linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
+        background: linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
+        -webkit-filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_fuchsia_blue_approx', endcolorstr='$color_cornflower_blue_approx', gradienttype=1 );
+                filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_fuchsia_blue_approx', endcolorstr='$color_cornflower_blue_approx', gradienttype=1 );
+        -webkit-transition: .5;
+        -o-transition: .5;
+        transition: .5;
+      }
 
-    .influencer-x-btn:hover {
-      opacity: 1;
-      -webkit-transition: .5;
-      -o-transition: .5;
-      transition: .5;
-    }
-  </style>
+      .influencer-x-btn:hover {
+        opacity: 1;
+        -webkit-transition: .5;
+        -o-transition: .5;
+        transition: .5;
+      }
+    </style>
 
-  <div id="fiona-btn" class="fiona-btn" style="background-image: url(https://welearn.school/extension/assets/icons/fiona/9.png);" >
-    <div class="number">1</div>
-  </div>
+    <div id="fiona-btn" class="fiona-btn" style="background-image: url(https://welearn.school/extension/assets/icons/fiona/9.png);" >
+      <div class="number">1</div>
+    </div>
 
-  <div id="influencer-app" class="influencer-x-popup hide-popup">
-    <div class="popup-body">
-      <div class="close-btn" style="background-image: url(https://welearn.school/extension/assets/icons/close.svg);" ></div>
-      <div class="influencer-info">
-        <div class="avatar"></div>
-        <p class="name"></p>
-        <a href="" target="_blank" class="website"></a>
-        <div class="influencer-rating">
-          <div class="stars">
-            <div class="stars-grey"></div>
-            <div class="stars-gold-cont">
-              <div class="stars-gold"></div>
+    <div id="influencer-app" class="influencer-x-popup hide-popup">
+      <div class="popup-body">
+        <div class="close-btn" style="background-image: url(https://welearn.school/extension/assets/icons/close.svg);" ></div>
+        <div class="influencer-info">
+          <div class="avatar"></div>
+          <p class="name"></p>
+          <a href="" target="_blank" class="website"></a>
+          <div class="influencer-rating">
+            <div class="stars">
+              <div class="stars-grey"></div>
+              <div class="stars-gold-cont">
+                <div class="stars-gold"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="influencer-social"></div>
-        <div class="last-course-btn">
-          <a href="" target="_blank">
-            <button class="influencer-x-btn">Last course</button>
-          </a>
-        </div>
-      </div>
-      <div class="more-influencers">
-        <span>Related To:</span>
-        <div class="influencers">
-          <div class="influencer">
+          <div class="influencer-social"></div>
+          <div class="last-course-btn">
             <a href="" target="_blank">
-              <div class="avatar" style="background-image: url(https://welearn.school/extension/assets/images/ava2.jpg)"></div>
+              <button class="influencer-x-btn">Last course</button>
             </a>
           </div>
-          <div class="influencer">
-            <a href="" target="_blank">
-              <div class="avatar" style="background-image: url(https://welearn.school/extension/assets/images/ava3.jpg)"></div>
-            </a>
-          </div>
-          <div class="influencer">
-            <a href="" target="_blank">
-              <div class="avatar" style="background-image: url(https://welearn.school/extension/assets/images/ava4.jpg)"></div>
-            </a>
+        </div>
+        <div class="more-influencers">
+          <span>Related To:</span>
+          <div class="influencers">
+            <div class="influencer">
+              <a href="" target="_blank">
+                <div class="avatar" style="background-image: url(https://welearn.school/extension/assets/images/ava2.jpg)"></div>
+              </a>
+            </div>
+            <div class="influencer">
+              <a href="" target="_blank">
+                <div class="avatar" style="background-image: url(https://welearn.school/extension/assets/images/ava3.jpg)"></div>
+              </a>
+            </div>
+            <div class="influencer">
+              <a href="" target="_blank">
+                <div class="avatar" style="background-image: url(https://welearn.school/extension/assets/images/ava4.jpg)"></div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/pscripts.js"></script>
+  </body>
+</html>
