@@ -76,7 +76,7 @@ setTimeout(function() {
 		    console.log(domFiona);
 		    
 		    function closeInfluencerXPopup(){
-https://www.instagram.com/p/BgX4fA8FdH8/?taken-by=dorn_ivan		      domPopup.classList.remove('active-popup');
+			  domPopup.classList.remove('active-popup');
 		      domFiona.classList.add('active-fiona');
 		      setTimeout(function(){
 		        domPopup.classList.add('hide-popup');
