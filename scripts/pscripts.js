@@ -56,6 +56,9 @@ setTimeout(function() {
 
 	    var domPopup = document.getElementById('influencer-app'),
 	        domFiona = document.getElementById('fiona-btn');
+
+	    domFiona.addEventListener('click', openInfluencerXPopup);
+	    
 	    function closeInfluencerXPopup(){
 	      domPopup.classList.remove('active-popup');
 	      domFiona.classList.add('active-fiona');
