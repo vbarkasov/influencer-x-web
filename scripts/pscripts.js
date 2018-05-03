@@ -65,9 +65,13 @@ setTimeout(function() {
 
 		    //domFiona.addEventListener('click', window.openInfluencerXPopup);
 		    
-	    	$(document).on ("click", ".fiona-btn", function () {
+	    	$(document).on("click", ".fiona-btn", function () {
 		    	window.openInfluencerXPopup();
+		    }).on("click", "#influencer-app .close-btn", function () {
+		    	window.closeInfluencerXPopup();
 		    });
+
+
 	    
 		    console.log(domFiona);
 		    
