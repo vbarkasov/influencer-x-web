@@ -3,7 +3,6 @@
 
 
 function insertingDataIntoPopup(avatar, name, website, rating, social, soc2, course){
-	//avatar = false;
     var domAva = jQuery('#influencer-app .influencer-info .avatar'),
       domName = jQuery('#influencer-app .influencer-info .name'),
       domSitelink = jQuery('#influencer-app .influencer-info .website'),
@@ -28,7 +27,7 @@ function insertingDataIntoPopup(avatar, name, website, rating, social, soc2, cou
     domCourse.children().attr('href', course[0].link);
 
     social.forEach(function(item, i, arr) {
-      appendToHTMLSocialItem(item, soc2[i].link);
+    	appendToHTMLSocialItem(item, soc2[i].link);
     });
 }
 
@@ -47,7 +46,7 @@ function appendToHTMLSocialItem(arr, lnk){
               '</div>' +
             '</a>' +
           '</div>';
-  domSocial.append(template);
+  	domSocial.append(template);
 }
 setTimeout(function() {
 
@@ -63,17 +62,13 @@ setTimeout(function() {
 		    var domPopup = document.getElementById('influencer-app'),
 		        domFiona = document.getElementById('fiona-btn');
 
-		    //domFiona.addEventListener('click', window.openInfluencerXPopup);
+		    domFiona.classList.add('active-fiona');
 		    
 	    	$(document).on("click", ".fiona-btn", function () {
 		    	window.openInfluencerXPopup();
 		    }).on("click", "#influencer-app .close-btn", function () {
 		    	window.closeInfluencerXPopup();
 		    });
-
-
-	    
-		    console.log(domFiona);
 		    
 		    function closeInfluencerXPopup(){
 			  domPopup.classList.remove('active-popup');
