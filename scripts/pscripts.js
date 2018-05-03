@@ -3,17 +3,18 @@
 
 
 function insertingDataIntoPopup(avatar, name, website, rating, social, soc2, course){
+	//avatar = false;
     var domAva = jQuery('#influencer-app .influencer-info .avatar'),
       domName = jQuery('#influencer-app .influencer-info .name'),
       domSitelink = jQuery('#influencer-app .influencer-info .website'),
       domRating = jQuery('#influencer-app .influencer-info .influencer-rating'),
       domCourse = jQuery('#influencer-app .influencer-info .last-course-btn');
 
-    var defaultPhoto = 'assets/images/default_avatar.svg',
+    var defaultPhoto = 'https://welearn.school/extension/assets/images/default_avatar.svg',
       defaultRating = '0';
 
     if(avatar == '' || !avatar){
-      avatar = 'assets/icons/default_avatar.svg';
+      avatar = 'https://welearn.school/extension/assets/icons/default-ava.svg';
     }
     if(rating == ''){
       rating = defaultRating;
