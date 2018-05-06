@@ -70,28 +70,15 @@ function loadUpUiElements () {
 }
 
 function insertingDataIntoPopup(avatar, name, website, rating, social, soc2, course){
-	//avatar = false;
     var domAva = $('#influencer-app .influencer-info .avatar'),
       domName = jQuery('#influencer-app .influencer-info .name'),
       domSitelink = jQuery('#influencer-app .influencer-info .website'),
-      domRating = jQuery('#influencer-app .influencer-info .influencer-rating'),
       domCourse = jQuery('#influencer-app .influencer-info .last-course-btn');
-
-    var defaultPhoto = 'https://welearn.school/extension/assets/images/default_avatar.svg',
-      defaultRating = '0';
-
-    if(avatar == '' || !avatar){
-      avatar = 'https://welearn.school/extension/assets/icons/default-ava.svg';
-    }
-    if(rating == ''){
-      rating = defaultRating;
-    }
 
     domAva.css('background-image', 'url(' + avatar + ')');
     domName.text(name);
     domSitelink.text(website);
     domSitelink.attr('href', website);
-    domRating.addClass('rating-' + rating);
     domCourse.children().attr('href', course[0].link);
 
     social.forEach(function(item, i, arr) {
