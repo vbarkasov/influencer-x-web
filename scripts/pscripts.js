@@ -99,6 +99,18 @@ function insertingDataIntoPopup(avatar, name, website, rating, social, soc2, cou
     });
 }
 
+function conversionNumber(num){
+	if(num < 1000){
+		return num;
+	}else if(num >= 1000 && num < 100000){
+		return (num/1000).toFixed(1) + 'K';
+	}else if(num >= 100000 && num < 1000000){
+		return (num/1000).toFixed(0) + 'K';
+	}else if(num >= 1000000){
+		return (num/1000000).toFixed(1) + 'M';
+	}
+}
+
 function appendToHTMLSocialItem(arr, lnk){
     var social_names = ["", "facebook", "linkedin", "youtube", "instagram"];
     var sname = social_names[arr.social_id];
@@ -109,7 +121,7 @@ function appendToHTMLSocialItem(arr, lnk){
                 '<div class="colored"></div>' +
               '</div>' +
               '<div class="influencer-social-info">' +
-                '<p class="number">' + arr.value + '</p>' +
+                '<p class="number">' + conversionNumber(arr.value) + '</p>' +
                 '<p class="number-of">' + arr.entity + '</p>' +
               '</div>' +
             '</a>' +
