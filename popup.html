@@ -75,9 +75,6 @@
 
       #influencer-app iframe {
         border: none;
-        border-top: 1px solid #dfdfdf;
-        padding-top: 25px;
-        margin-top: 3px
       }
 
       #influencer-app {
@@ -187,6 +184,12 @@
         -webkit-transition: all .5s;
         -o-transition: all .5s;
         transition: all .5s;
+      }
+
+      #influencer-app .hide-button-container {
+        border-bottom: 1px solid #dfdfdf;
+        padding-bottom: 3px;
+        margin-bottom: 22px
       }
 
       #influencer-app .hide-course-preview-button {
@@ -614,9 +617,9 @@
       }
 
       #influencer-app .course-preview {
-        -webkit-transition: all .7s;
-        -o-transition: all .7s;
-        transition: all .7s;
+        -webkit-transition: all 0s;
+        -o-transition: all 0s;
+        transition: all 0s;
       }
 
       #influencer-app .course-preview-hidden {
@@ -660,7 +663,7 @@
           </div>
         </div>
         <div id="course-preview" class="course-preview course-preview-hidden">
-          <div>
+          <div class="hide-button-container">
             <span>
               <button class="hide-course-preview-button" id="hide-course-preview-button"></button>
             </span>
