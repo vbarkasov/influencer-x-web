@@ -97,7 +97,7 @@ function loadUpUiElements () {
 }
 
 function insertingDataIntoPopup(avatar, name, website, rating, social, soc2, course){
-    var domAva = $('#influencer-app .influencer-info .avatar'),
+    var domAva = $('#influencer-app .influencer-info .avatar .photo'),
       domName = jQuery('#influencer-app .influencer-info .name'),
       domSitelink = jQuery('#influencer-app .influencer-info .website'),
       domRating = jQuery('#influencer-app .course-preview .course-rating'),
