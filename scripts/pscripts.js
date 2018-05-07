@@ -107,10 +107,14 @@ function insertingDataIntoPopup(avatar, name, website, rating, social, soc2, cou
       domCourseRatingNumber = jQuery("#influencer-app .course-rating-number");
       domCourseRatingText = jQuery("#influencer-app .course-rating-text");
       domCoursePrice = jQuery("#influencer-app .course-price");
+      domMainIndicatorText = jQuery("#influencer-app .percent");
+      domMainIndicatorCircle = jQuery('#influencer-app .influencer-info .avatar .main-indecator svg circle')
     
     if(rating == ''){ 
         rating = defaultRating
     }
+
+    MainIndicator = 84; //main entry point for the Main Indicator value
 
     domAva.css('background-image', 'url(' + avatar + ')');
     domName.text(name);
@@ -123,6 +127,8 @@ function insertingDataIntoPopup(avatar, name, website, rating, social, soc2, cou
     domCourseRatingNumber.text(rating/10)
     domCourseRatingText.text('(2,050)')
     domCoursePrice.text('$14.99')
+    domMainIndicatorText.text(MainIndicator+'%')
+    domMainIndicatorCircle.css("stroke-dashoffset", 430 - MainIndicator*4.3)
 
 
 
