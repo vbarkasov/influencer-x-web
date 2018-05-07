@@ -163,17 +163,60 @@
         -o-transition: .5s;
         transition: .5s;
       }
-      .influencer-x-popup .close-btn:hover{
+      
+      #influencer-app .last-course-btn {
+        overflow: auto;
+        opacity: 1;
+        -webkit-transition: all .7s;
+        -o-transition: all .7s;
+        transition: all .7s;
+      }
+
+      #influencer-app .course-btn-hidden {
+        opacity: 0;
+        height: 0;
+        cursor: default;
+        -webkit-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+      }
+
+      #influencer-app .hide-course-preview-button {
+        background-image: url(https://use.fontawesome.com/releases/v5.0.12/svgs/solid/arrow-left.svg);
+        background-size: 100%;
+        border: none;
+        float: right;
+        color: rgb(0, 0, 0);
         opacity: .4;
+        padding: 12px;
+        margin: 12px;
+        outline: none;
         -webkit-transition: .5s;
         -o-transition: .5s;
         transition: .5s;
+        inline-size: none;
+      } 
+      
+      #influencer-app .hide-course-preview-button:hover {
+        border: none;
+        float: right;
+        opacity: 0.6;
+        padding: 14px;
+        -webkit-transition: .5s;
+        -o-transition: .5s;
+        transition: .5s;
+        inline-size: none;
+      } 
+
+      #influencer-app .influencer-x-popup .close-btn:hover{
+        opacity: .4;
+        -webkit-transition: .2s;
+        -o-transition: .2s;
+        transition: .2s;
       }
 
       #influencer-app .influencer-info {
         text-align: center;
-        border-bottom: 1px solid #dfdfdf;
-        padding-bottom: 23px;
       }
 
       #influencer-app .influencer-info .avatar {
@@ -200,14 +243,13 @@
         font-size: 13px;
         color: #999;
         margin: 0;
-        margin-bottom: 7px;
+        margin-bottom: 4px;
       }
 
       #influencer-app .influencer-info .website {
         font-size: 13px;
-        color: #999;
+        color: rgb(185, 185, 185);
         margin: 0;
-        margin-bottom: 15px;
         text-decoration: none;
       }
 
@@ -215,7 +257,88 @@
         text-decoration: underline;
       }
 
-      #influencer-app .influencer-info .influencer-social {
+      #influencer-app .course-preview .course-rating {
+        width: 100px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        position: relative;
+      }
+
+      #influencer-app .course-preview .course-rating .stars-container {
+        width: 70px;
+        transform-origin: center center;
+        margin-left: -15px;
+        margin-right: -15px;
+      }
+
+      #influencer-app .course-preview .course-rating .stars {
+        margin: 0;
+        position: relative;
+        width: 100px;
+        -webkit-transform: scale(.7);
+            -ms-transform: scale(.7);
+                transform: scale(.7);
+      }
+      #influencer-app .course-preview .course-rating .stars-grey {
+        background-image: url(https://welearn.school/extension/assets/icons/stars-grey.svg);
+        width: 100px;
+        height: 15px;
+      }
+      #influencer-app .course-preview .course-rating .stars-gold-cont {
+        position: absolute;
+        top: 0;
+        overflow-x: hidden;
+      }
+      #influencer-app .course-preview .course-rating .stars-gold {
+        background-image: url(https://welearn.school/extension/assets/icons/stars-gold.svg);
+        width: 100px;
+        height: 15px;
+      }
+      
+      #influencer-app .course-preview .course-rating.rating-0 .stars-gold-cont {
+        width: 0;
+      }
+      #influencer-app .course-preview .course-rating.rating-5 .stars-gold-cont {
+        width: 8px;
+      }
+      #influencer-app .course-preview .course-rating.rating-10 .stars-gold-cont {
+        width: 20px;
+      }
+      #influencer-app .course-preview .course-rating.rating-15 .stars-gold-cont {
+        width: 29px;
+      }
+      #influencer-app .course-preview .course-rating.rating-20 .stars-gold-cont {
+        width: 40px;
+      }
+      #influencer-app .course-preview .course-rating.rating-25 .stars-gold-cont {
+        width: 50px;
+      }
+      #influencer-app .course-preview .course-rating.rating-30 .stars-gold-cont {
+        width: 60px;
+      }
+      #influencer-app .course-preview .course-rating.rating-35 .stars-gold-cont {
+        width: 71px;
+      }
+      #influencer-app .course-preview .course-rating.rating-40 .stars-gold-cont {
+        width: 80px;
+      }
+      #influencer-app .course-preview .course-rating.rating-45 .stars-gold-cont {
+        width: 92px;
+      }
+      #influencer-app .course-preview .course-rating.rating-50 .stars-gold-cont {
+        width: 100px;
+      }
+
+      #influencer-app .course-preview .course-caption {
+        font-size: small;
+        color: #999;
+        margin-top: 10px;
+        margin-left: 2px;
+        margin-right: 2px
+      }
+
+      #influencer-app .course-rating-block {
+        margin-top: 5px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -223,10 +346,64 @@
         -webkit-box-direction: normal;
             -ms-flex-direction: row;
                 flex-direction: row;
+      }
+
+      #influencer-app .course-preview .course-rating-block .course-rating-number {
+        margin-top: 9px;
+        margin-left: -25px;
+        margin-bottom: 5px;
+        font-size: small;
+        font-weight: bold;
+        color: #4a4a4a;
+        height: 15px;
+      }
+
+      #influencer-app .course-preview .course-rating-block .course-rating-text {
+        margin-top: 9px;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        font-size: smaller;
+        color: #999;
+        height: 15px;
+      }
+
+      #influencer-app .course-preview .course-rating-block .course-price {
+        margin-top: 9px;
+        margin-bottom: 5px;
+        margin-left: 108px;
+        font-size: medium;
+        font-weight: bold;
+        color: #4a4a4a;
+        height: 15px;
+      }
+
+
+      #influencer-app .influencer-info .influencer-social {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: auto;
+        -webkit-transition: all .7s;
+        -o-transition: all .7s;
+        transition: all .7s;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
         -webkit-box-pack: center;
             -ms-flex-pack: center;
-                justify-content: center;
-        margin-bottom: 20px;
+                justify-content: center;  
+      }
+
+      #influencer-app .influencer-info .influencer-social-margin {
+        margin: 20px 0 
+      }
+
+      #influencer-app .influencer-social-hidden {
+        opacity: 1;
+        height: 0;
+        margin: 0;
+        padding: 0
       }
 
       #influencer-app .influencer-info .influencer-social .influencer-social-item {
@@ -382,34 +559,76 @@
         background-size: 100%;
       }
 
-      .influencer-x-btn {
+      #influencer-app .influencer-x-btn {
         border: none;
         border-radius: 20px;
         padding: 10px 25px;
         color: #fff;
         font-size: 17px;
+        margin: 10px 0;
         cursor: pointer;
         outline: none;
         opacity: .8;
-        -webkit-box-shadow: 8px 12px 49px 7px rgba(0, 0, 0, 0.2);
-                box-shadow: 8px 12px 49px 7px rgba(0, 0, 0, 0.2);
+        max-height: 999999;
+        -webkit-box-shadow: 0px 9px 50px -10px rgba(0,0,0,0.2);
+           -moz-box-shadow: 0px 9px 50px -10px rgba(0,0,0,0.2);
+                box-shadow: 0px 9px 50px -10px rgba(0,0,0,0.2);
         background: #8358c3;
         background: -webkit-linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
         background: -o-linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
         background: linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
         -webkit-filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_fuchsia_blue_approx', endcolorstr='$color_cornflower_blue_approx', gradienttype=1 );
                 filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_fuchsia_blue_approx', endcolorstr='$color_cornflower_blue_approx', gradienttype=1 );
-        -webkit-transition: .5;
-        -o-transition: .5;
-        transition: .5;
+        -webkit-transition: .7;
+        -o-transition: .7;
+        transition: .7;
+        margin-bottom: 20px;
       }
 
-      .influencer-x-btn:hover {
+      #influencer-app .influencer-x-btn:hover {
         opacity: 1;
         -webkit-transition: .5;
         -o-transition: .5;
         transition: .5;
       }
+
+      #influencer-app .influencer-x-btn-hidden {
+        max-height: 0;
+        opacity: 1;
+        -webkit-transition: .7;
+        -o-transition: .7;
+        transition: .7;
+      }
+
+      #influencer-app .influencer-x-btn-hidden-hover {
+        max-height: 0;
+        opacity: 1;
+      }
+
+      #influencer-app .course-preview {
+        -webkit-transition: all .7s;
+        -o-transition: all .7s;
+        transition: all .7s;
+      }
+
+      #influencer-app .course-preview-hidden {
+        height: 0;
+        opacity: 0;
+      }
+
+      #influencer-app .course-preview-active {
+        height: auto;
+        opacity: 1;
+      }
+
+      .hr {
+        content: '';
+        width: 100%;
+        height: 1px;
+        margin-top: 7px;
+        background-color: #dfdfdf;
+      }
+
     </style>
 
     <div id="fiona-btn" class="fiona-btn verified-false" style="background-image: url(https://welearn.school/extension/assets/icons/fiona/9.png);" >
@@ -425,11 +644,39 @@
           <p class="name"></p>
           <p class="proffesion">online-marketing</p>
           <a href="" target="_blank" class="website"></a>
-          <div class="influencer-social"></div>
-          <div class="last-course-btn">
-            <a href="" target="_blank">
-              <button class="influencer-x-btn">Preview Course</button>
-            </a>
+          <div class="influencer-social influencer-social-margin" id="influencer-social"></div>
+          <div class="last-course-btn" id="last-course-btn">
+            <span>
+              <button class="influencer-x-btn" id="influencer-x-btn">Preview Course</button>
+            </span>
+          </div>
+        </div>
+        <div id="course-preview" class="course-preview course-preview-hidden">
+          <div>
+            <span>
+              <button class="hide-course-preview-button" id="hide-course-preview-button"></button>
+            </span>
+          </div>        
+          <div> 
+            <iframe id="youtube-frame" width="auto" height="165">
+            </iframe>
+          </div>
+          <div class="course-caption">
+          </div>
+          <div class="course-rating-block">
+              <div class="course-rating">
+                  <div class="stars-container">
+                    <div class="stars">
+                      <div class="stars-grey"></div>
+                      <div class="stars-gold-cont">
+                        <div class="stars-gold"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <div class="course-rating-number"></div>
+              <div class="course-rating-text"></div>
+              <div class="course-price"></div>        
           </div>
         </div>
         <div class="more-influencers">
