@@ -227,16 +227,55 @@
         text-align: center;
       }
 
-      #influencer-app .influencer-info .avatar {
-        width: 120px;
-        height: 120px;
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
+      #influencer-app .influencer-info .avatar{
+        position: relative;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 140px;
+        height: 140px;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+      #influencer-app .influencer-info .avatar .photo{
+        position: absolute;
+        width: 122px;
+        height: 122px;
         background-size: 100%;
         border-radius: 50%;
-        border: 10px solid #f2f3f3;
-        margin: 0 auto;
-        margin-bottom: 15px;
+      }
+      #influencer-app .influencer-info .avatar .percent{
+        position: absolute;
+        background-color: #91c73e;
+        border-radius: 20px;
+        color: #fff;
+        font-weight: 900;
+        font-size: 15px;
+        padding: 3px 10px;
+        margin: 0;
+        bottom: 8px;
+        right: 5px;
+      }
+      #influencer-app .influencer-info .avatar svg{
+        width: 140px;
+        height: 140px;
+        viewBox: 0 0 140px 140px;
+        transform: rotate(90deg);
+      }
+      #influencer-app .influencer-info .avatar svg circle{
+        cx: 70px;
+        cy: 70px;
+        r: 68px;
+        fill: none;
+        stroke: #91c73e;
+        stroke-width: 4px;
+        stroke-dasharray: 430;
+        stroke-dashoffset: 90;
       }
 
       #influencer-app .influencer-info .name {
@@ -648,7 +687,13 @@
         <div class="app-logo" style="background-image: url(https://welearn.school/extension/assets/images/logo.png);" ></div>
         <div class="close-btn" style="background-image: url(https://welearn.school/extension/assets/icons/close.svg);" ></div>
         <div class="influencer-info">
-          <div class="avatar"></div>
+          <div class="avatar">
+            <div class="progress">
+              <svg><circle></svg>
+            </div>
+            <div class="photo"></div>
+            <p class="percent">81%</p>
+          </div>
           <p class="name"></p>
           <p class="proffesion">online-marketing</p>
           <a href="" target="_blank" class="website"></a>
