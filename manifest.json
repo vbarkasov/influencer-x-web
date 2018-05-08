@@ -35,7 +35,7 @@
       "38": "icons/icon-38.png"
     },
     "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'; ",
-    "default_title": "Influencer X"
+    "default_title": "Fionna"
   },
   "web_accessible_resources": ["popup.html","scripts/jquery.min.js", "scripts/pscripts.js"]
 }
