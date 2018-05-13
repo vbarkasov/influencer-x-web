@@ -8,7 +8,6 @@ InfluencerBg = (function($){
 		init: function() {
 			methods.getBrowser().runtime.onMessage.addListener(
 				function (request, sender, sendResponse) {
-					console.log('Action: ' + request.action);
 					switch (request.action) {
 						case 'checkUrl':
 							methods.checkUrl(sender.url, sender.tab.id);
@@ -37,7 +36,6 @@ InfluencerBg = (function($){
 		},
 		checkUrl: function (url, tabId) {
 			$.get("https://welearn.school/wp-json/v1/?s=" + url, function(edata) {
-				debugger;
 				if('name' in edata) {
 					$.get("./popup.html", function (popupHtml) {
 						methods.getBrowser().tabs.sendMessage(tabId, {
