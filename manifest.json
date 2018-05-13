@@ -1,6 +1,6 @@
 {
   "name": "__MSG_appName__",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
@@ -17,16 +17,23 @@
     "*://*/*"
   ],  
   "background": {
-    "scripts": ["scripts/background.js", "scripts/jquery.min.js", "popup.html", "scripts/pscripts.js"],
-    "persistent": false
+    "page": "background.html"
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*",
-        "https://*/*",
-        "*://*/*"],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
       "run_at": "document_end",
-      "js": ["scripts/jquery.min.js"]
+      "js": [
+        "scripts/jquery.min.js",
+        "scripts/content.js"
+      ],
+      "css": [
+        "styles/fonts.css",
+        "styles/content.css"
+      ]
     }
   ],
   "browser_action": {
@@ -34,10 +41,9 @@
       "19": "icons/icon-19.png",
       "38": "icons/icon-38.png"
     },
-    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'; ",
     "default_title": "Fionna"
   },
-  "web_accessible_resources": ["popup.html","scripts/jquery.min.js", "scripts/pscripts.js"]
+  "web_accessible_resources": []
 }
 
 
