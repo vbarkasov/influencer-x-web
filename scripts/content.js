@@ -95,8 +95,9 @@ window.Influencer = (function($){
 				methods.openCourseInfo();
 			});
 
-			$popup.on('click', function(e) {
+			$('#influencer-bg-area').on('click', function(){
 				methods.closeInfluencerXPopup();
+				$(this).hide();
 			});
 		},
 		appendToHTMLSocialItem(arr, lnk) {
@@ -128,6 +129,7 @@ window.Influencer = (function($){
 		openInfluencerXPopup: function(){
 			$('#influencer-app').removeClass('hide-popup').addClass('active-popup');
 			$('#fiona-btn').removeClass('active-fiona');
+			$('#influencer-bg-area').show();
 		},
 
 		openCourseInfo: function(){
@@ -157,7 +159,6 @@ window.Influencer = (function($){
 				return (num/1000000).toFixed(1) + 'M';
 			}
 		}
-
 	};
 
 	methods.init();
