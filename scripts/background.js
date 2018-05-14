@@ -1,50 +1,49 @@
-function listenerHandler(url, tabId) {
-	if(!url.includes("://")) return false;
-	jQuery.get("https://welearn.school/wp-json/v1/?s="+url, function(edata) {
-		f = edata;
-		console.log(f);
-		if('name' in f) {
-			
-			zcode = 'var influencerData=JSON.parse(`'+JSON.stringify(edata)+'`); ';
+InfluencerBg = (function($){
+	var methods = {
+		getBrowser: function () {
+			if (typeof(chrome) === 'undefined' && typeof(browser) !== 'undefined') {
+				return browser;
+			} else return chrome;
+		},
+		init: function() {
+			methods.getBrowser().runtime.onMessage.addListener(
+				function (request, sender, sendResponse) {
+					switch (request.action) {
+						case 'checkUrl':
+							var url = request.url ? request.url : sender.url;
+							methods.checkUrl(encodeURIComponent(url), sender.tab.id);
+							break;
+					}
+				}
+			);
 
-			$.get("./popup.html", function(pd) {
-				chrome.tabs.executeScript(tabId,{
-					code: zcode+"var div=document.createElement('div'); document.body.appendChild(div); div.innerHTML=`"+pd+"`;"
+			methods.getBrowser().browserAction.onClicked.addListener(function (tab) {
+				chrome.tabs.executeScript(tab.id, {
+					code: "var fionaBtn = document.getElementById('fiona-btn'); if(fionaBtn){ fionaBtn.click();}"
 				});
-
-				$.get("./scripts/pscripts.js", function(zd) {
-					chrome.tabs.executeScript(tabId,{
-						code: zd
-					});
-					
-				});
-
 			});
-
-		} else {
-			chrome.tabs.executeScript(tabId, {
-
-				code: ``//`document.getElementById('influencer-app').style.display = 'none';document.getElementById('fiona-btn').style.display = 'none';`
-
+		},
+		checkUrl: function (url, tabId) {
+			$.get("https://welearn.school/wp-json/v1/?s=" + url, function(edata) {
+				if('name' in edata) {
+					$.get("./popup.html", function (popupHtml) {
+						methods.getBrowser().tabs.sendMessage(tabId, {
+							action: 'showPopup',
+							data: {
+								popupHtml: popupHtml,
+								influencerData: edata
+							}
+						});
+					});
+				} else {
+					methods.getBrowser().tabs.sendMessage(tabId, {
+						action: 'removePopup'
+					});
+				}
 			});
 		}
-	});
-}
+	};
 
-chrome.webNavigation.onCompleted.addListener(function (data) {
+	methods.init();
+})(jQuery);
 
-	listenerHandler(data.url, data.tabId);
-}
-);
-
-chrome.tabs.onUpdated.addListener(
-  function(tabId, changeInfo, tab) {
-    listenerHandler(tab.url, tab.id);
-  }
-);
-
-chrome.browserAction.onClicked.addListener(function (tab) {
-	chrome.tabs.executeScript(tab.id, {
-		code: `var fionaBtn = document.getElementById('fiona-btn'); if(fionaBtn){ fionaBtn.click();}`
-	});
-});
