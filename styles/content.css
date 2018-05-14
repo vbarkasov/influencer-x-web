@@ -508,6 +508,7 @@
 
 #influencer-app .influencer-info .influencer-social .influencer-social-item .logo {
 	position: relative;
+	display: block;
 }
 
 #influencer-app .influencer-info .influencer-social .influencer-social-item .colored {
@@ -516,6 +517,7 @@
 	background-size: 100% auto;
 	background-position: center;
 	top: 0;
+	display: block;
 }
 
 #influencer-app .influencer-info .influencer-social .influencer-social-item.twitter .colored {
@@ -558,10 +560,12 @@
 }
 
 #influencer-app .influencer-info .influencer-social .influencer-social-info {
+	display: block;
 	padding-left: 8px;
 }
 
 #influencer-app .influencer-info .influencer-social .number {
+	display: block;
 	font-size: 16px;
 	font-weight: 900;
 	line-height: 18px;
@@ -570,6 +574,7 @@
 }
 
 #influencer-app .influencer-info .influencer-social .number-of {
+	display: block;
 	font-size: 10.5px;
 	color: #999;
 	line-height: 15px;
