@@ -1,6 +1,6 @@
 window.Influencer = (function($){
 	var vars = {
-		influencerInitialized: false
+		url: ''
 	};
 
 	var methods = {
@@ -16,6 +16,10 @@ window.Influencer = (function($){
 				switch(request.action) {
 					case 'showPopup':
 						var influencerData = request.data.influencerData;
+
+						// remove old extension's elements
+						$('#influencer-bg-area,#fiona-btn,#influencer-app').remove();
+
 						$(document.body).append(request.data.popupHtml);
 						methods.insertingDataIntoPopup(influencerData);
 						methods.initBehavior();
@@ -23,7 +27,17 @@ window.Influencer = (function($){
 				}
 			});
 
-			vars.influencerInitialized = true;
+			vars.url = window.location.href;
+
+			window.setInterval(function () {
+				if (window.location.href !== vars.url) {
+					vars.url = window.location.href;
+					methods.getBrowser().runtime.sendMessage({
+						action: 'checkUrl',
+						url: vars.url
+					}, function(response) {});
+				}
+			}, 500);
 		},
 
 		insertingDataIntoPopup: function(influencerData){
