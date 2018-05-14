@@ -16,14 +16,13 @@ window.Influencer = (function($){
 				switch(request.action) {
 					case 'showPopup':
 						var influencerData = request.data.influencerData;
-
-						// remove old extension's elements
-						$('#influencer-bg-area,#fiona-btn,#influencer-app').remove();
-
+						methods.removeAllElementsOfExtension();
 						$(document.body).append(request.data.popupHtml);
 						methods.insertingDataIntoPopup(influencerData);
 						methods.initBehavior();
 						break;
+					case 'removePopup':
+						methods.removeAllElementsOfExtension();
 				}
 			});
 
@@ -38,6 +37,10 @@ window.Influencer = (function($){
 					}, function(response) {});
 				}
 			}, 500);
+		},
+
+		removeAllElementsOfExtension: function(){
+			$('#influencer-bg-area,#fiona-btn,#influencer-app').remove();
 		},
 
 		insertingDataIntoPopup: function(influencerData){

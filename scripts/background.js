@@ -35,6 +35,10 @@ InfluencerBg = (function($){
 							}
 						});
 					});
+				} else {
+					methods.getBrowser().tabs.sendMessage(tabId, {
+						action: 'removePopup'
+					});
 				}
 			});
 		}
