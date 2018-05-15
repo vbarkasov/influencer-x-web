@@ -56,8 +56,8 @@ window.Influencer = (function($){
 				name = influencerData.name || '',
 				website = influencerData.website || '',
 				social = influencerData.entities || [],
-				soc2 = influencerData.socials || [{ 'link': ''}],
-				course = influencerData.course || [{ 'link': ''}];
+				soc2 = influencerData.socials || [],
+				course = influencerData.course || [];
 
 			// set dom elements
 			var $popup = $('#influencer-app');
@@ -80,7 +80,12 @@ window.Influencer = (function($){
 			$avatar.css('background-image', 'url(' + avatar + ')');
 			$rating.addClass('rating-' + rating);
 			$sitelink.text(website).attr('href', website);
-			$course.children().attr('href', course[0]['link']);
+			if(Array.isArray(course) && course.length > 0 && course[0].hasOwnProperty('link')) {
+				$course.children().attr('href', course[0]['link']);
+			} else {
+				$course.hide();
+			}
+
 			$youtube.attr('src', 'https://www.youtube.com/embed/PTUkTjC77fA');
 			$courseCaption.text('These two programs help people who want to make money and beginner affiliate marketers to get started online. While Super Affiliate System is an upsell of Internet Jetset, it is a completely different training course.');
 			$courseRatingNumber.text(rating/10);
@@ -89,9 +94,13 @@ window.Influencer = (function($){
 			$mainIndicatorText.text(mainIndicator + '%');
 			$mainIndicatorCircle.css('stroke-dashoffset', 430 - mainIndicator * 4.3);
 
-			social.forEach(function(item, i, arr) {
-				methods.appendToHTMLSocialItem(item, soc2[i]['link']);
-			});
+			if(Array.isArray(soc2) && soc2.length > 0) {
+				social.forEach(function(item, i, arr) {
+					if(soc2[i].hasOwnProperty('link')) {
+						methods.appendToHTMLSocialItem(item, soc2[i]['link']);
+					}
+				});
+			}
 		},
 
 		initBehavior: function(){
