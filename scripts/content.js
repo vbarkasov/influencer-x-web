@@ -23,6 +23,10 @@ window.Influencer = (function($){
 						break;
 					case 'removePopup':
 						methods.removeAllElementsOfExtension();
+						break;
+					case 'clickFiona':
+						$('#fiona-btn').click();
+						break;
 				}
 			});
 
