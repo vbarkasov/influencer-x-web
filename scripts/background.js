@@ -18,8 +18,8 @@ InfluencerBg = (function($){
 			);
 
 			methods.getBrowser().browserAction.onClicked.addListener(function (tab) {
-				chrome.tabs.executeScript(tab.id, {
-					code: "var fionaBtn = document.getElementById('fiona-btn'); if(fionaBtn){ fionaBtn.click();}"
+				methods.getBrowser().tabs.sendMessage(tab.id, {
+					action: 'clickFiona'
 				});
 			});
 		},
