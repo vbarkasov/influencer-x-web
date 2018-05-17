@@ -13,6 +13,8 @@
     "activeTab",
     "webNavigation",
     "tabs",
+    "storage",
+    "background",
     "http://*/*",
     "https://*/*",
     "*://*/*"
