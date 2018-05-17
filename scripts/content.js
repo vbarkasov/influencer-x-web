@@ -20,6 +20,15 @@ window.Influencer = (function($){
 						$(document.body).append(request.data.popupHtml);
 						methods.insertingDataIntoPopup(influencerData);
 						methods.initBehavior();
+						methods.getBrowser().runtime.sendMessage({
+							action: 'sendStats',
+							statsData: {
+								category: 'popup',
+								action: 'show',
+								label: 'page',
+								value: encodeURIComponent(window.location.href)
+							}
+						}, function(r) {});
 						break;
 					case 'removePopup':
 						methods.removeAllElementsOfExtension();
@@ -160,6 +169,15 @@ window.Influencer = (function($){
 			$('#influencer-app').removeClass('hide-popup').addClass('active-popup');
 			$('#fiona-btn').removeClass('active-fiona');
 			$('#influencer-bg-area').show();
+			methods.getBrowser().runtime.sendMessage({
+				action: 'sendStats',
+				statsData: {
+					category: 'popup',
+					action: 'open',
+					label: 'page',
+					value: encodeURIComponent(window.location.href)
+				}
+			}, function(r) {});
 		},
 
 		openCourseInfo: function(){
@@ -168,6 +186,15 @@ window.Influencer = (function($){
 				.removeClass('influencer-social-margin');
 			$('#course-preview').add('course-preview-active')
 				.removeClass('course-preview-hidden');
+			methods.getBrowser().runtime.sendMessage({
+				action: 'sendStats',
+				statsData: {
+					category: 'popup',
+					action: 'clickPreviewCourse',
+					label: 'page',
+					value: encodeURIComponent(window.location.href)
+				}
+			}, function(r) {});
 		},
 
 		closeCourseInfo: function() {

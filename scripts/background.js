@@ -13,6 +13,13 @@ InfluencerBg = (function($){
 							var url = request.url ? request.url : sender.url;
 							methods.checkUrl(encodeURIComponent(url), sender.tab.id);
 							break;
+						case 'sendStats':
+							if(InfluencerBg.ga
+								&& InfluencerBg.ga.hasOwnProperty('sendEvent')
+								&& request.statsData) {
+								InfluencerBg.ga.sendEvent(request.statsData)
+							}
+							break;
 					}
 				}
 			);
@@ -45,5 +52,8 @@ InfluencerBg = (function($){
 	};
 
 	methods.init();
-})(jQuery);
 
+	return {
+		getItem: methods.getItem
+	}
+})(jQuery);
