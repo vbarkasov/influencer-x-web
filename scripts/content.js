@@ -68,6 +68,8 @@ window.Influencer = (function($){
 				soc2 = influencerData.socials || [],
 				course = influencerData.course || [];
 
+			console.log(influencerData);
+
 			// set dom elements
 			var $popup = $('#influencer-app');
 			var $popupInfo = $popup.find('.influencer-info');
@@ -104,7 +106,7 @@ window.Influencer = (function($){
 			$mainIndicatorCircle.css('stroke-dashoffset', 430 - mainIndicator * 4.3);
 
 			if(Array.isArray(soc2) && soc2.length > 0) {
-				social.forEach(function(item, i, arr) {
+				soc2.forEach(function(item, i, arr) {
 					if(soc2[i].hasOwnProperty('link')) {
 						methods.appendToHTMLSocialItem(item, soc2[i]['link']);
 					}
@@ -140,9 +142,22 @@ window.Influencer = (function($){
 			});
 		},
 		appendToHTMLSocialItem(arr, lnk) {
-			var socialNames = ['', 'facebook', 'linkedin', 'youtube', 'instagram'];
-			var sname = socialNames[arr.social_id];
+
+			//var socialNames = ['', 'facebook', 'linkedin', 'youtube', 'instagram'];
+			var sname = arr.name;
 			var $social = $('#influencer-app .influencer-info .influencer-social');
+
+			var ennum = "";
+			var ennumof = "";
+
+			if('entities' in arr) {
+				console.log('-');
+				console.log(arr.entities);
+				console.log('-');
+				ennum = arr.entities[0].value,
+				ennumof = arr.entities[0].entity
+			}
+
 			var template =  '' +
 				'<div class="influencer-social-item ' + sname + '">' +
 					'<a href="' + lnk + '" target="_blank">' +
@@ -150,8 +165,8 @@ window.Influencer = (function($){
 							'<span class="colored"></span>' +
 						'</span>' +
 						'<span class="influencer-social-info">' +
-							'<span class="number">' + methods.convertNumberIntoAbbr(arr.value) + '</span>' +
-							'<span class="number-of">' + arr.entity + '</span>' +
+							'<span class="number">' + ennum + '</span>' +
+							'<span class="number-of">' + ennumof + '</span>' +
 						'</span>' +
 					'</a>' +
 				'</div>';
