@@ -1,9 +1,55 @@
 InfluencerBg = (function($){
+	var settings = {
+		jwtApiRoot: 'https://askfionna.com/wp-json'
+	};
+
 	var methods = {
 		getBrowser: function () {
 			if (typeof(chrome) === 'undefined' && typeof(browser) !== 'undefined') {
 				return browser;
 			} else return chrome;
+		},
+
+		getItem: function(key, callback){
+			methods.getBrowser().storage.local.get(key, function(val) {
+				if(typeof(callback) === 'function') {
+					if(!val || typeof(val) === 'undefined') {
+						callback(val);
+					} else {
+						callback(val[key]);
+					}
+
+				}
+			});
+		},
+
+		getItems: function (keys, callback) {
+			var promises = $.map(keys, function (itemKey) {
+				var dfd = new $.Deferred();
+				methods.log('itemKey:');
+				methods.log(itemKey);
+				methods.getItem(itemKey, function (itemData) {
+					dfd.resolve(itemData);
+				});
+				return dfd.promise();
+			});
+
+			$.when.apply(this, promises)
+				.done(function () {
+					if (typeof(callback) === 'function') {
+						callback.apply(callback, arguments);
+					}
+				});
+		},
+
+		setItem: function(key, value, callback) {
+			var data = {};
+			data[key] = value;
+			methods.getBrowser().storage.local.set(data, function() {
+				if(typeof(callback) === 'function') {
+					callback();
+				}
+			});
 		},
 		init: function() {
 			methods.getBrowser().runtime.onMessage.addListener(
@@ -48,12 +94,20 @@ InfluencerBg = (function($){
 					});
 				}
 			});
+		},
+		getUserToken: function(userData) {
+			return $.post(settings.jwtApiRoot + '/jwt-auth/v1/token', userData, 'json');
 		}
 	};
 
 	methods.init();
 
 	return {
-		getItem: methods.getItem
+		getItem: methods.getItem,
+		getItems: methods.getItems,
+		setItem: methods.setItem,
+		getUserToken: function(userData) {
+			return methods.getUserToken(userData);
+		}
 	}
 })(jQuery);

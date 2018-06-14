@@ -44,7 +44,7 @@
       "16": "icons/icon16.png",
       "48": "icons/icon48.png"
     },
-    "default_title": "Fionna"
+    "default_popup": "browserPopup.html"
   },
   "web_accessible_resources": []
 }

@@ -1,0 +1,143 @@
+@import 'fonts-local.css';
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Extension Popup Styles */
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+.wrapper {
+	padding: 25px 25px 20px;
+	position: relative;
+}
+
+.header {
+	margin-bottom: 20px
+}
+
+.user-info-item,
+label {
+	font-weight: 700;
+	font-size: 21px;
+	color: #4a4a4a;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+.buttons-wrapper {
+	padding-top: 20px;
+}
+
+.btn {
+	border: none;
+	border-radius: 20px;
+	padding: 10px 25px;
+	color: #fff;
+	font-size: 17px;
+	margin: 0 0 10px 0;
+	cursor: pointer;
+	outline: none;
+	opacity: 0.8;
+	max-height: 999999;
+	-webkit-box-shadow: 0px 9px 50px -10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 9px 50px -10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 9px 50px -10px rgba(0, 0, 0, 0.2);
+	background: #8358c3;
+	background: -webkit-linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
+	background: -o-linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
+	background: linear-gradient(45deg, #8358c3 0, #4b8df6 100%);
+	-webkit-filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_fuchsia_blue_approx', endcolorstr='$color_cornflower_blue_approx', gradienttype=1);
+	filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_fuchsia_blue_approx', endcolorstr='$color_cornflower_blue_approx', gradienttype=1);
+	-webkit-transition: 0.7s;
+	-o-transition: 0.7s;
+	transition: 0.7s;
+}
+
+.btn_fluid {
+	width: 100%;
+}
+
+.btn_link {
+	background: none;
+	box-shadow: none;
+	color: #8E85DA;
+}
+
+.btn_link:hover {
+	color: #769AEF;
+}
+
+.close-btn {
+	opacity: .15;
+	width: 22px;
+	height: 22px;
+	background-size: 100%;
+	cursor: pointer;
+	position: absolute;
+	top: 13px;
+	right: 13px;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+	background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgMTc0LjIzOSAxNzQuMjM5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxNzQuMjM5IDE3NC4yMzk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNODcuMTIsMEMzOS4wODIsMCwwLDM5LjA4MiwwLDg3LjEyczM5LjA4Miw4Ny4xMiw4Ny4xMiw4Ny4xMnM4Ny4xMi0zOS4wODIsODcuMTItODcuMTJTMTM1LjE1NywwLDg3LjEyLDB6IE04Ny4xMiwxNTkuMzA1CgkJYy0zOS44MDIsMC03Mi4xODUtMzIuMzgzLTcyLjE4NS03Mi4xODVTNDcuMzE4LDE0LjkzNSw4Ny4xMiwxNC45MzVzNzIuMTg1LDMyLjM4Myw3Mi4xODUsNzIuMTg1UzEyNi45MjEsMTU5LjMwNSw4Ny4xMiwxNTkuMzA1eiIKCQkvPgoJPHBhdGggZD0iTTEyMC44Myw1My40MTRjLTIuOTE3LTIuOTE3LTcuNjQ3LTIuOTE3LTEwLjU1OSwwTDg3LjEyLDc2LjU2OEw2My45NjksNTMuNDE0Yy0yLjkxNy0yLjkxNy03LjY0Mi0yLjkxNy0xMC41NTksMAoJCXMtMi45MTcsNy42NDIsMCwxMC41NTlsMjMuMTUxLDIzLjE1M0w1My40MDksMTEwLjI4Yy0yLjkxNywyLjkxNy0yLjkxNyw3LjY0MiwwLDEwLjU1OWMxLjQ1OCwxLjQ1OCwzLjM2OSwyLjE4OCw1LjI4LDIuMTg4CgkJYzEuOTExLDAsMy44MjQtMC43MjksNS4yOC0yLjE4OEw4Ny4xMiw5Ny42ODZsMjMuMTUxLDIzLjE1M2MxLjQ1OCwxLjQ1OCwzLjM2OSwyLjE4OCw1LjI4LDIuMTg4YzEuOTExLDAsMy44MjEtMC43MjksNS4yOC0yLjE4OAoJCWMyLjkxNy0yLjkxNywyLjkxNy03LjY0MiwwLTEwLjU1OUw5Ny42NzksODcuMTI3bDIzLjE1MS0yMy4xNTNDMTIzLjc0Nyw2MS4wNTcsMTIzLjc0Nyw1Ni4zMzEsMTIwLjgzLDUzLjQxNHoiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K');
+}
+
+input.input-field {
+	font-size: 1.2rem;
+	width: 100%;
+	margin: 5px 0 10px;
+	border: 1px solid #DEDEDE;
+	padding: 5px;
+	line-height: 1.1;
+	color: #4a4a4a;
+}
+
