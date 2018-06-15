@@ -691,6 +691,7 @@
 	-webkit-transition: all 0s;
 	-o-transition: all 0s;
 	transition: all 0s;
+	display: none;
 }
 
 #influencer-app .course-preview-hidden {
@@ -721,6 +722,14 @@
 	z-index: 10000;
 }
 
+#influencer-app .influencer-tabs {
+	padding: 15px;
+	text-align: center;
+}
+
+a.influencer-views-toggle {
+	margin: 0px 10px;
+}
 
 @keyframes purse-animation {
 	0% {

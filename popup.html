@@ -5,74 +5,87 @@
 </div>
 
 <div id="influencer-app" class="influencer-x-popup hide-popup">
-  <div class="popup-body">
-    <div class="app-logo"></div>
-    <div class="close-btn"></div>
-    <div class="influencer-info">
-      <div class="avatar">
-        <div class="main-indecator">
-          <svg><circle></circle></svg>
+    <div class="popup-body">
+      <div class="influencer-tab influencer-tab-profile">
+        <div class="app-logo"></div>
+        <div class="close-btn"></div>
+        <div class="influencer-info">
+          <div class="avatar">
+            <div class="main-indecator">
+              <svg><circle></circle></svg>
+            </div>
+            <div class="photo"></div>
+            <p class="percent">81%</p>
+          </div>
+          <p class="name"></p>
+          <p class="proffesion">online-marketing</p>
+          <a href="" target="_blank" class="website"></a>
+          <div class="influencer-social influencer-social-margin" id="influencer-social"></div>
+          <div class="last-course-btn" id="last-course-btn">
+            <span>
+              <button class="influencer-x-btn" id="influencer-x-btn">Preview Course</button>
+            </span>
+          </div>
         </div>
-        <div class="photo"></div>
-        <p class="percent">81%</p>
-      </div>
-      <p class="name"></p>
-      <p class="proffesion">online-marketing</p>
-      <a href="" target="_blank" class="website"></a>
-      <div class="influencer-social influencer-social-margin" id="influencer-social"></div>
-      <div class="last-course-btn" id="last-course-btn">
-        <span>
-          <button class="influencer-x-btn" id="influencer-x-btn">Preview Course</button>
-        </span>
-      </div>
-    </div>
-    <div id="course-preview" class="course-preview course-preview-hidden">
-      <div class="hide-button-container">
-        <span>
-          <button class="hide-course-preview-button" id="hide-course-preview-button"></button>
-        </span>
-      </div>
-      <div>
-        <iframe id="youtube-frame" width="auto" height="165"></iframe>
-      </div>
-      <div class="course-caption">
-      </div>
-      <div class="course-rating-block">
-          <div class="course-rating">
-              <div class="stars-container">
-                <div class="stars">
-                  <div class="stars-grey"></div>
-                  <div class="stars-gold-cont">
-                    <div class="stars-gold"></div>
+        <div id="course-preview" class="course-preview course-preview-hidden">
+          <div class="hide-button-container">
+            <span>
+              <button class="hide-course-preview-button" id="hide-course-preview-button"></button>
+            </span>
+          </div>
+          <div>
+            <iframe id="youtube-frame" width="auto" height="165"></iframe>
+          </div>
+          <div class="course-caption">
+          </div>
+          <div class="course-rating-block">
+              <div class="course-rating">
+                  <div class="stars-container">
+                    <div class="stars">
+                      <div class="stars-grey"></div>
+                      <div class="stars-gold-cont">
+                        <div class="stars-gold"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              <div class="course-rating-number"></div>
+              <div class="course-rating-text"></div>
+              <div class="course-price"></div>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <div class="more-influencers">
+          <span>Related To:</span>
+          <div class="influencers">
+            <div class="influencer">
+              <a href="" target="_blank">
+                <div class="avatar avatar2"></div>
+              </a>
             </div>
-          <div class="course-rating-number"></div>
-          <div class="course-rating-text"></div>
-          <div class="course-price"></div>
-      </div>
+            <div class="influencer">
+              <a href="" target="_blank">
+                <div class="avatar avatar3"></div>
+              </a>
+            </div>
+            <div class="influencer">
+              <a href="" target="_blank">
+                <div class="avatar avatar4"></div>
+              </a>
+            </div>
+          </div>
+        </div>
     </div>
-    <div class="hr"></div>
-    <div class="more-influencers">
-      <span>Related To:</span>
-      <div class="influencers">
-        <div class="influencer">
-          <a href="" target="_blank">
-            <div class="avatar avatar2"></div>
-          </a>
-        </div>
-        <div class="influencer">
-          <a href="" target="_blank">
-            <div class="avatar avatar3"></div>
-          </a>
-        </div>
-        <div class="influencer">
-          <a href="" target="_blank">
-            <div class="avatar avatar4"></div>
-          </a>
-        </div>
+      <div class="influencer-tab influencer-tab-categories" style="display: none">
+        <div class="influencer-categories-list"></div>
+        <div class="influencer-category-people"></div>
       </div>
+      <div class="influencer-tab influencer-tab-auth" style="display: none">auth</div>
+    <div class="hr"></div>
+    <div class="influencer-tabs">
+      <a class="influencer-views-toggle" tab="profile" href="javascript://"><img src="https://image.flaticon.com/icons/svg/74/74472.svg" width="32" /></a>
+      <a class="influencer-views-toggle" tab="categories" href="javascript://"><img src="https://image.flaticon.com/icons/svg/56/56763.svg" width="32" /></a>
+      <a class="influencer-views-toggle" tab="auth" href="javascript://"><img src="https://image.flaticon.com/icons/svg/483/483342.svg" width="32" /></a>
     </div>
   </div>
 </div>
