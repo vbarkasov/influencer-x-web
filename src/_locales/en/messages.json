@@ -10,5 +10,23 @@
   "btnTooltip": {
     "message": "Fionna",
     "description": "Tooltip for the button."
+  },
+  "loginFormLoginLabel": {
+    "message": "Login:"
+  },
+  "loginFormPasswordLabel": {
+    "message": "Password:"
+  },
+  "loginFormLoginBtnText": {
+    "message": "Login"
+  },
+  "loginFormRegisterBtnText": {
+    "message": "Register"
+  },
+  "userInfoPanelLogoutBtnText": {
+    "message": "Logout"
+  },
+  "loaderText": {
+    "message": "Loading..."
   }
 }
