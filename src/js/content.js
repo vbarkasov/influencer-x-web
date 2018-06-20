@@ -3,6 +3,13 @@ window.Influencer = (function($){
 		url: ''
 	};
 
+	var influencers_cats = [
+		["Web", "John Crestani", "https://johncrestani.com/"],
+		["Marketing", "John Doe", "https://google.com/"],
+		["Fishing", "Martin King", "https://facebook.com/"],
+		["Life-coach", "Tony Robbins", "https://tonyrobbins.com/"]
+	];
+
 	var methods = {
 		getBrowser: function () {
 			if (typeof(chrome) === 'undefined' && typeof(browser) !== 'undefined') {
@@ -19,6 +26,7 @@ window.Influencer = (function($){
 						methods.removeAllElementsOfExtension();
 						$(document.body).append(request.data.popupHtml);
 						methods.insertingDataIntoPopup(influencerData);
+						methods.fillCategories(influencers_cats);
 						methods.initBehavior();
 						methods.getBrowser().runtime.sendMessage({
 							action: 'sendStats',
@@ -52,6 +60,34 @@ window.Influencer = (function($){
 			}, 500);
 		},
 
+		fillCategories: function(data) {
+			var $catslist = $('.influencer-tab-categories .influencer-categories-list');
+			var uniqueCategories = [];
+			for(var i =0;i < data.length; i++) {
+				uniqueCategories.push(data[i][0]);
+			}
+
+			$catslist.html("");
+			for(i=0; i < uniqueCategories.length; i++) {
+				$catslist.append("<a class='influencer-category-item' category='"+uniqueCategories[i]+"' href='javascript://'>"+uniqueCategories[i]+"</a><br/>");
+			}
+
+		},
+
+		fillCategoryPeople: function(selectedCategory) {
+			var $catPeople = $('.influencer-tab-categories .influencer-category-people');
+			$catPeople.html('<a class="influencer-categories-back" href="javascript://">< Back</a><div class="hr"></div>');
+			for(var i=0; i < influencers_cats.length; i++) {
+				var person = influencers_cats[i];
+				if(person[0] === selectedCategory)
+				$catPeople.append('<a target="_blank" href="'+person[2]+'">'+person[1]+'</a><br/>');
+			}
+			$('.influencer-categories-back').on('click', function() {
+				$('.influencer-category-people').hide();
+				$('.influencer-categories-list').show();
+			});
+		},
+
 		removeAllElementsOfExtension: function(){
 			$('#influencer-bg-area,#fiona-btn,#influencer-app').remove();
 		},
@@ -67,6 +103,8 @@ window.Influencer = (function($){
 				social = influencerData.entities || [],
 				soc2 = influencerData.socials || [],
 				course = influencerData.course || [];
+
+			console.log(influencerData);
 
 			// set dom elements
 			var $popup = $('#influencer-app');
@@ -104,7 +142,7 @@ window.Influencer = (function($){
 			$mainIndicatorCircle.css('stroke-dashoffset', 430 - mainIndicator * 4.3);
 
 			if(Array.isArray(soc2) && soc2.length > 0) {
-				social.forEach(function(item, i, arr) {
+				soc2.forEach(function(item, i, arr) {
 					if(soc2[i].hasOwnProperty('link')) {
 						methods.appendToHTMLSocialItem(item, soc2[i]['link']);
 					}
@@ -138,11 +176,43 @@ window.Influencer = (function($){
 				methods.closeInfluencerXPopup();
 				$(this).hide();
 			});
+
+			$('.influencer-tabs .influencer-views-toggle').on('click', function(e) {
+				var selectedTab = $(this).attr('tab');
+				console.log(selectedTab);
+				$('.influencer-tab').hide();
+				$('.influencer-tab-'+selectedTab).show();
+				e.stopPropagation();
+			});
+
+			$('.influencer-category-item').on('click', function() {
+				var selectedCategory = $(this).attr('category');
+
+				methods.fillCategoryPeople(selectedCategory);
+
+				$('.influencer-category-people').show();
+				$('.influencer-categories-list').hide();
+			});
+
+
 		},
 		appendToHTMLSocialItem(arr, lnk) {
-			var socialNames = ['', 'facebook', 'linkedin', 'youtube', 'instagram'];
-			var sname = socialNames[arr.social_id];
+
+			//var socialNames = ['', 'facebook', 'linkedin', 'youtube', 'instagram'];
+			var sname = arr.name;
 			var $social = $('#influencer-app .influencer-info .influencer-social');
+
+			var ennum = "";
+			var ennumof = "";
+
+			if('entities' in arr) {
+				console.log('-');
+				console.log(arr.entities);
+				console.log('-');
+				ennum = arr.entities[0].value,
+				ennumof = arr.entities[0].entity
+			}
+
 			var template =  '' +
 				'<div class="influencer-social-item ' + sname + '">' +
 					'<a href="' + lnk + '" target="_blank">' +
@@ -150,8 +220,8 @@ window.Influencer = (function($){
 							'<span class="colored"></span>' +
 						'</span>' +
 						'<span class="influencer-social-info">' +
-							'<span class="number">' + methods.convertNumberIntoAbbr(arr.value) + '</span>' +
-							'<span class="number-of">' + arr.entity + '</span>' +
+							'<span class="number">' + ennum + '</span>' +
+							'<span class="number-of">' + ennumof + '</span>' +
 						'</span>' +
 					'</a>' +
 				'</div>';
@@ -184,7 +254,7 @@ window.Influencer = (function($){
 			$('#last-course-btn').addClass('course-btn-hidden');
 			$('#influencer-social').addClass('influencer-social-hidden')
 				.removeClass('influencer-social-margin');
-			$('#course-preview').add('course-preview-active')
+			$('#course-preview').show().add('course-preview-active')
 				.removeClass('course-preview-hidden');
 			methods.getBrowser().runtime.sendMessage({
 				action: 'sendStats',
@@ -202,7 +272,7 @@ window.Influencer = (function($){
 			$('#influencer-social').add('influencer-social-margin')
 				.removeClass('influencer-social-hidden');
 			$('#course-preview').addClass('course-preview-hidden')
-				.removeClass('course-preview-active');
+				.removeClass('course-preview-active').hide();
 		},
 
 		convertNumberIntoAbbr(num){
