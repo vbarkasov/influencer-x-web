@@ -30,8 +30,8 @@
       ],
       "run_at": "document_end",
       "js": [
-        "scripts/jquery.min.js",
-        "scripts/content.js"
+        "libs/jquery.min.js",
+        "js/content.js"
       ],
       "css": [
         "styles/fonts.css",

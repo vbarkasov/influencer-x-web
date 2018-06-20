@@ -60,6 +60,11 @@ body {
 	position: relative;
 }
 
+.loader-wrapper {
+	padding: 20px 0 20px;
+	text-align: center;
+}
+
 .header {
 	margin-bottom: 20px
 }
@@ -71,6 +76,10 @@ label {
 	color: #4a4a4a;
 	margin: 0;
 	margin-bottom: 5px;
+}
+
+.user-info-item {
+	font-size: 16px;
 }
 
 .buttons-wrapper {
@@ -140,4 +149,3 @@ input.input-field {
 	line-height: 1.1;
 	color: #4a4a4a;
 }
-
