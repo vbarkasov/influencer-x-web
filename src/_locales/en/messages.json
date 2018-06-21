@@ -28,5 +28,14 @@
   },
   "loaderText": {
     "message": "Loading..."
+  },
+  "messagesLoginFail": {
+    "message": "Login failed"
+  },
+  "loginFormEmptyUsername": {
+    "message": "Username field is empty"
+  },
+  "loginFormEmptyPassword": {
+    "message": "Password field is empty"
   }
 }

@@ -11,11 +11,13 @@ templates['loader'] = template({"compiler":[7,">= 4.0.0"],"main":function(contai
     + "\" />\r\n</div>";
 },"useData":true});
 templates['loginForm'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, alias1=container.lambda, alias2=container.escapeExpression;
+    var stack1, helper, alias1=container.lambda, alias2=container.escapeExpression;
 
   return "<form id=\"auth-form\">\r\n	<label>\r\n		"
     + alias2(alias1(((stack1 = ((stack1 = (depth0 != null ? depth0.i18n : depth0)) != null ? stack1.loginFormLoginLabel : stack1)) != null ? stack1.message : stack1), depth0))
-    + "<br/>\r\n		<input type=\"text\" name=\"login\" class=\"input-field\" value=\"\" />\r\n	</label>\r\n	<label>\r\n		"
+    + "<br/>\r\n		<input type=\"text\" name=\"login\" class=\"input-field\" value=\""
+    + alias2(((helper = (helper = helpers.loginValue || (depth0 != null ? depth0.loginValue : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"loginValue","hash":{},"data":data}) : helper)))
+    + "\" />\r\n	</label>\r\n	<label>\r\n		"
     + alias2(alias1(((stack1 = ((stack1 = (depth0 != null ? depth0.i18n : depth0)) != null ? stack1.loginFormPasswordLabel : stack1)) != null ? stack1.message : stack1), depth0))
     + "<br/>\r\n		<input type=\"password\" name=\"password\" class=\"input-field\" value=\"\" />\r\n	</label>\r\n	<div class=\"buttons-wrapper\">\r\n		<button class=\"btn btn_fluid\" type=\"submit\">"
     + alias2(alias1(((stack1 = ((stack1 = (depth0 != null ? depth0.i18n : depth0)) != null ? stack1.loginFormLoginBtnText : stack1)) != null ? stack1.message : stack1), depth0))

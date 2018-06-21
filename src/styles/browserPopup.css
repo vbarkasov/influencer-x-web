@@ -149,3 +149,30 @@ input.input-field {
 	line-height: 1.1;
 	color: #4a4a4a;
 }
+
+.inflr-msg-container .inflr-msg {
+	position: relative;
+	padding: 11px 11px;
+	margin-bottom: 11px;
+	border: 1px solid transparent;
+	border-radius: .25rem;
+	font-size: 15px;
+}
+
+.inflr-msg-container .inflr-msg.inflr-msg__error {
+	color: #721c24;
+	background-color: #f8d7da;
+	border-color: #f5c6cb;
+}
+
+.inflr-msg-container .inflr-msg.inflr-msg__success {
+	color: #155724;
+	background-color: #d4edda;
+	border-color: #c3e6cb;
+}
+
+.inflr-msg-container .inflr-msg.inflr-msg__text {
+	color: #1b1e21;
+	background-color: #d6d8d9;
+	border-color: #c6c8ca;
+}
